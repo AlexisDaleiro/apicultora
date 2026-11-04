@@ -1,6 +1,6 @@
 ---
 name: Colmenas del Río
-description: Retiro de colmenas de abejas y nidos de avispas en Uruguay, presentado como una publicación documental de campo.
+description: Retiro de colmenas de abejas y nidos de avispas en Uruguay. Página compacta y de alto contraste, con la fotografía como protagonista y un esquema animado de la reubicación.
 colors:
   paper: "#F2F0E8"
   paper-raised: "#FBFAF5"
@@ -20,28 +20,28 @@ colors:
 typography:
   display:
     fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.625rem, 1.15rem + 6.3vw, 7rem)"
-    fontWeight: 760
-    lineHeight: 0.93
-    letterSpacing: "-0.025em"
-    fontVariation: "'wdth' 80"
+    fontSize: "clamp(2.75rem, 0.5rem + 9.9vw, 9.5rem)"
+    fontWeight: 800
+    lineHeight: 0.9
+    letterSpacing: "-0.03em"
+    fontVariation: "'wdth' 75"
   headline:
     fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.875rem, 1.2rem + 2.9vw, 3.75rem)"
-    fontWeight: 760
-    lineHeight: 1
-    letterSpacing: "-0.02em"
-    fontVariation: "'wdth' 80"
+    fontSize: "clamp(2rem, 1.3rem + 2.6vw, 3.5rem)"
+    fontWeight: 800
+    lineHeight: 0.98
+    letterSpacing: "-0.025em"
+    fontVariation: "'wdth' 75"
   title:
     fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.75rem, 1.35rem + 1.5vw, 2.5rem)"
-    fontWeight: 700
-    lineHeight: 1.05
+    fontSize: "clamp(1.625rem, 1.3rem + 1.2vw, 2.25rem)"
+    fontWeight: 800
+    lineHeight: 1
     letterSpacing: "-0.015em"
-    fontVariation: "'wdth' 80"
+    fontVariation: "'wdth' 75"
   lead:
     fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.125rem, 1rem + 0.45vw, 1.375rem)"
+    fontSize: "clamp(1.125rem, 1rem + 0.45vw, 1.3125rem)"
     fontWeight: 400
     lineHeight: 1.45
   body:
@@ -56,9 +56,9 @@ typography:
     lineHeight: 1.45
   statement:
     fontFamily: "Source Serif 4, ui-serif, Georgia, serif"
-    fontSize: "clamp(1.25rem, 1rem + 0.9vw, 1.75rem)"
+    fontSize: "clamp(1.25rem, 1.05rem + 0.7vw, 1.625rem)"
     fontWeight: 400
-    lineHeight: 1.35
+    lineHeight: 1.3
   species:
     fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1.0625rem"
@@ -71,8 +71,8 @@ spacing:
   gutter-tablet: "2rem"
   gutter-desktop: "2.5rem"
   column-gap: "1.5rem"
-  section: "3rem"
-  section-md: "4rem"
+  section-mobile: "1.75rem"
+  section-desktop: "2.75rem"
   touch: "2.75rem"
 components:
   button-primary:
@@ -92,13 +92,13 @@ components:
   button-secondary-hover:
     backgroundColor: "{colors.paper-press}"
   field:
-    backgroundColor: "{colors.paper-raised}"
+    backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
     rounded: "{rounded.sm}"
     padding: "0.625rem 0.875rem"
     height: "3rem"
   option-tile:
-    backgroundColor: "{colors.paper-raised}"
+    backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
     rounded: "{rounded.sm}"
     padding: "0 0.75rem"
@@ -106,6 +106,15 @@ components:
   option-tile-checked:
     backgroundColor: "{colors.olive}"
     textColor: "{colors.paper}"
+  button-light:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    hoverFill: "{colors.wax}"
+  button-outline-light:
+    backgroundColor: "transparent"
+    textColor: "{colors.paper}"
+    borderColor: "{colors.ink-text}"
+    hoverFill: "{colors.paper}"
   mobile-contact-bar:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
@@ -114,25 +123,22 @@ components:
 
 # Design System: Colmenas del Río
 
-Preferencia vigente del usuario (2026-11-04): diseño más directo y compacto. Sin rótulos numerados de sección, índices «Fig.», folio «Cuaderno de campo» ni frases genéricas sobre escuchar o dar una mirada propia. La foto de apicultores se integra al contacto. No hay sección independiente del oficio ni llamada final repetida. Separaciones de 48 px en móvil y 64 px desde tablet; banda de reubicación con 40/56 px de relleno vertical. Se conservan los números de los tres pasos porque indican una secuencia.
+Preferencia vigente del usuario (2026-11-04, segunda ronda): página compacta, contemporánea y con carácter, fotografía protagonista y animaciones de calidad. Fuera del sistema: rótulos tipo «03 — El oficio», numeraciones decorativas (los pasos de la reubicación tampoco llevan número: la lista ordenada ya da la secuencia), epígrafes «Fig.», folio «Cuaderno de campo», frases genéricas y grandes espacios entre secciones. Tercera ronda (mismo día): sin avisos sobre la propia demo en la página (créditos de foto, «ampliada con IA», «generada para esta propuesta», «propuesta de rediseño»); el origen de las imágenes queda documentado en `docs/ENTREGA.md`.
 
 ## Overview
 
-**Creative North Star: "La publicación de campo"**
+**Creative North Star: "Del muro al apiario"**
 
-Un oficio especialista presentado como una publicación de campo: la tipografía arma la página, las fotografías tienen encuadres rectangulares y epígrafes, y la reubicación de las abejas se explica con una lámina dibujada que termina en un mapa. Papel claro, tinta casi negra, un oliva profundo para la acción principal y la doble página de reubicación, y un óxido que solo marca (punto final del titular, subrayados al pasar, foco). Nada de sombras, nada de tarjetas ilustradas, nada de texturas de panal.
+Un servicio de campo contado en tres superficies: tinta (el hecho: una colonia en una casa, foto a sangre), papel (la duda: ¿abejas o avispas?) y oliva (el destino: la colonia viaja a un apiario del sur). La tipografía condensada y muy pesada arma la página; la foto panorámica la abre; el esquema animado de la reubicación es su pieza firma. Sin sombras, sin tarjetas decorativas, sin texturas de panal.
 
-Objetivos de experiencia, en orden: quien encontró una colonia o un nido, con el teléfono en una mano y sin saber qué insecto es, tiene que poder escribir por WhatsApp o llamar sin leer ni bajar; después entender que no hace falta identificar el insecto; después ver la diferencia entre abejas y avispas; y por último saber adónde van las colonias reubicadas. Quien administra un predio o una empresa tiene que leer seriedad de especialista, no un folleto de control de plagas ni una tienda de miel.
-
-Diferencias deliberadas respecto de la demo anterior (rechazada; captura en `docs/referencias/demo-anterior-1440.png`): el fondo verde petróleo pasa a papel `#F2F0E8`; los acentos amarillos desaparecen (el único amarillo de la página es el traje de la foto); no hay patrón de panal ni hexágonos; la foto ya no se recorta en hexágono, se muestra rectangular y entera; no hay abejitas ni apiarios ilustrados de adorno; los bloques de servicio ilustrados se reemplazan por dos columnas tipográficas separadas por una línea fina. La única ilustración es la lámina conceptual de reubicación, rotulada como tal.
+Objetivos, en orden: escribir por WhatsApp o llamar sin bajar (las dos acciones están en la primera pantalla a 375, 768 y 1440 px); entender que no hace falta identificar el insecto; ver la diferencia entre abejas y avispas; saber adónde van las colonias reubicadas.
 
 **Key Characteristics:**
-- Papel, tinta y oliva; óxido solo como marca editorial y foco.
-- Archivo condensada y pesada para títulos; Source Serif 4 solo dentro de la sección de reubicación.
-- Líneas de tinta de 1 y 2 px como estructura; filetes finos como divisores.
-- Fotografía rectangular con epígrafes numerados: hero, comparación de insectos y escena del oficio. Material generado identificado como parte de la propuesta.
-- Una lámina de tres paneles que comparten suelo y recorrido, y se dibuja al entrar en vista.
-- Esquinas de 4 px, sin sombras, plano.
+- Héroe sobre tinta con titular gigante en dos líneas y la panorámica a sangre (hasta 1600 px) justo debajo.
+- Cambios de superficie (tinta, papel, oliva, papel, tinta) en lugar de aire para separar secciones.
+- Archivo condensada (75 %) y extrabold para títulos; Source Serif 4 solo en la declaración de reubicación.
+- Cera como acento sobre oscuro, óxido como marca sobre papel.
+- Dos animaciones protagonistas (entrada del héroe y esquema de reubicación) y un acompañamiento ligado al desplazamiento.
 
 ## Colors
 
@@ -143,18 +149,18 @@ Paleta de imprenta sobre papel: tinta verdosa casi negra, un oliva de campo para
 - **Oliva hondo** (olive-deep): hover del botón principal y relleno de los volúmenes en la lámina (cavidad, caja, colmenas). Papel sobre oliva hondo 10.47:1.
 
 ### Secondary
-- **Óxido de sello** (oxide): solo marcas editoriales y foco. Punto final del h1, guion de la nota «No necesitás saber…», subrayado al pasar en navegación, enlaces y preguntas, cursor de texto (`caret-color`) y anillo de foco sobre fondos claros. Sobre papel 5.44:1. Sobre oliva da 1.52:1: por eso nunca es el color de foco en superficies oscuras.
-- **Cera** (wax): anillo de foco dentro de `.sobre-oliva` y `.sobre-tinta`. Sobre oliva 5.96:1, sobre tinta 9.66:1.
+- **Óxido de sello** (oxide): solo marcas editoriales y foco. Subrayado al pasar en enlaces y preguntas, cursor de texto (`caret-color`) y anillo de foco sobre fondos claros. Sobre papel 5.44:1. Sobre oliva da 1.52:1: por eso nunca es el color de foco en superficies oscuras.
+- **Cera** (wax): acento de las superficies oscuras. Punto final del h1, relleno de hover del botón claro, trazo de navegación, recorrido, cajón y llegada del esquema, barras de los pasos y anillo de foco dentro de `.sobre-oliva` y `.sobre-tinta`. Sobre oliva 5.96:1, sobre tinta 9.66:1. Nunca sobre papel.
 
 ### Neutral
 - **Papel** (paper): fondo de página, `theme-color` y fondo de la barra móvil.
 - **Papel alzado** (paper-raised): fondo de campos, opciones y vista previa del mensaje. Gris apagado sobre él 5.66:1.
 - **Papel prensado** (paper-press): hover del botón secundario y fondo de reserva de la foto mientras carga. Tinta sobre él 11.99:1.
 - **Tinta** (ink): texto, líneas estructurales de 1 y 2 px, borde del botón secundario y fondo del pie. Sobre papel 13.38:1.
-- **Gris apagado** (muted): texto secundario, epígrafes, `dt`, respuestas de preguntas. Sobre papel 5.19:1.
+- **Gris apagado** (muted): texto secundario, `dt`, respuestas de preguntas. Sobre papel 5.19:1.
 - **Borde de control** (control): borde de campos, opciones y vista previa. Sobre papel 3.47:1 y sobre papel alzado 3.79:1 (cumple 3:1 de componentes no textuales).
 - **Filete** (rule): divisores decorativos. Sobre papel 1.26:1.
-- **Texto sobre oliva** (olive-text): texto secundario, numerales y epígrafe de la sección de reubicación; trazo punteado del recorrido. Sobre oliva 5.79:1.
+- **Texto sobre oliva** (olive-text): texto secundario de la sección de reubicación, nota del mapa y contorno del país. Sobre oliva 5.79:1.
 - **Filete sobre oliva** (olive-rule): divisores dentro de la sección oliva. Decorativo.
 - **Texto sobre tinta** (ink-text): texto secundario del pie. Sobre tinta 8.87:1.
 - **Filete sobre tinta** (ink-rule): línea final del pie. Decorativo.
@@ -178,150 +184,132 @@ Pares medidos (WCAG 2.x, verificados contra los valores de `globals.css`):
 | ink | paper-press | 11.99 | hover secundario |
 
 ### Named Rules
-**The Sello Rule.** El óxido marca, no rellena: nunca es fondo, nunca es texto corrido, nunca botón. Si una pantalla tiene más óxido que un punto, un guion y un subrayado, sobra.
+**The Sello Rule.** El óxido marca, no rellena: nunca es fondo, nunca es texto corrido, nunca botón. Vive solo sobre papel; sobre tinta y oliva ese papel lo cumple la cera.
 
 **The Filete Rule.** El filete (`rule`, 1.26:1) nunca es el único límite de un control. Todo campo, opción o caja interactiva usa `control` o `ink`.
 
 **The Foco Oscuro Rule.** Toda superficie oscura nueva lleva `.sobre-oliva` o `.sobre-tinta` para que el foco pase a cera; el óxido no se ve sobre oliva.
 
+**The Cera Rule.** La cera solo aparece sobre tinta u oliva, como punto, trazo o relleno breve de hover. Nunca es fondo de sección ni texto corrido.
+
 ## Typography
 
-**Display Font:** Archivo variable con eje `wdth` (con ui-sans-serif, system-ui)
-**Body Font:** Archivo variable, ancho normal
-**Serif:** Source Serif 4, solo redonda (con ui-serif, Georgia)
-**Itálica:** Archivo itálica 400, instancia estática, solo para el nombre científico
-
-**Character:** Una grotesca condensada y pesada que se lee como titular de diario técnico, con la misma familia a ancho normal para el texto; la serif aparece solo como voz de la sección documental de reubicación.
+**Display:** Archivo variable, eje `wdth` al 75 %, peso 800. **Texto:** Archivo a ancho normal. **Serif:** Source Serif 4, solo la declaración de reubicación. **Itálica:** Archivo itálica real, solo *Apis mellifera*.
 
 ### Hierarchy
-- **Display** (760, `font-stretch: 80%`, clamp 2.625rem → 7rem, interlineado 0.93, -0.025em): solo el h1. Su punto final va en óxido.
-- **Headline** (760, 80%, clamp 1.875rem → 3.75rem, 1, -0.02em): todos los h2 de sección.
-- **Title** (700, 80%, clamp 1.75rem → 2.5rem, 1.05, -0.015em): h3 «Abejas» y «Avispas».
-- **Título menor** (700, 85%, 1.375rem a 1.875rem, interlineado 1.25): títulos de pasos, título del preparador de mensaje, frase de la franja «¿No sabés qué insecto es?».
-- **Pregunta** (600, ancho normal, 1.1875rem / md 1.375rem, 1.375): resumen de cada pregunta frecuente.
-- **Lead** (400, clamp 1.125rem → 1.375rem, 1.45): texto de apoyo junto a cada h2, medida 34–38ch.
-- **Body** (400, clamp 1.0625rem → 1.1875rem, 1.6): texto corrido, medida 36–52ch; respuestas hasta 60ch.
-- **Label / meta** (400 o 600, 0.875rem, 1.45): folio, epígrafes, ayudas de campo, estado de copia, títulos del pie.
-- **Declaración serif** (Source Serif 4 400, clamp 1.25rem → 1.75rem, 1.35): solo la declaración de reubicación. Numerales de pasos en serif 1.125rem 400 `olive-text`; epígrafe de la lámina en serif 0.875rem.
-- **Firma** (Archivo, `font-stretch: 78%`, interlineado 1, -0.01em): «Colmenas» 800 + «del Río» 400; 1.3125rem / md 1.4375rem en el encabezado, 1.5rem en el pie. Es una propuesta, no un logotipo oficial.
-- **Botones** 600, 1.0625rem, 1.2. **Navegación** 500.
-
-Corte de títulos: `text-wrap: balance` en h1–h3; `text-wrap: pretty` en `p`, `li` y `dd`. Los títulos no se cortan a mano con `<br>`; en el pie, «Foto: Colmenas del Río.» va con `white-space: nowrap`. Teléfonos con `tabular-nums`.
+- **Display** (800, 75 %, clamp 2.75rem → 9.5rem, 0.9, -0.03em): solo el h1, en dos líneas de código («Retiro de colmenas» / «y nidos de avispas.»), cada una en su máscara `.linea`. A 1440 px casi llena el contenedor. Punto final en cera.
+- **Headline** (800, 75 %, clamp 2rem → 3.5rem, 0.98): h2.
+- **Title** (800, 75 %, clamp 1.625rem → 2.25rem): «Abejas», «Avispas».
+- **Título menor** (700–800, 78–85 %, 1.25rem a 2rem): pasos del esquema, título del preparador.
+- **Lead** (400, clamp 1.125rem → 1.3125rem): apoyo del héroe y del contacto, 36–38ch.
+- **Body** (400, clamp 1.0625rem → 1.1875rem, 1.6).
+- **Meta** (0.875rem): rasgos de los insectos, ayudas de campo, nota del mapa.
+- **Declaración serif** (Source Serif 4 400, clamp 1.25rem → 1.625rem, 1.3).
+- **Firma** «Colmenas» 800 + «del Río» 400 al 75 %; 1.375rem / md 1.5rem.
 
 ### Named Rules
-**The Serif Confinada Rule.** Source Serif 4 vive solo dentro de `#reubicacion` (declaración, numerales, epígrafe de la lámina). Fuera de ahí, todo epígrafe y toda nota es Archivo.
+**The Serif Confinada Rule.** Source Serif 4 vive solo en la declaración de `#reubicacion`.
 
-**The Itálica Real Rule.** La única itálica es *Apis mellifera* con `.nombre-cientifico` (Archivo itálica real, `font-synthesis: none`). No se usa itálica para énfasis.
-
-**The Ancho Rule.** Condensación solo en títulos: 80% para h1–h3, 85% para títulos menores, 78% para la firma. El texto corrido va siempre a ancho normal.
+**The Ancho Rule.** Condensación solo en títulos y firma. El texto corrido va a ancho normal.
 
 ## Layout
 
-Contenedor `.contenedor`: ancho máximo 80rem, centrado, márgenes laterales 1.25rem, 2rem desde 40rem y 2.5rem desde 64rem. Puntos de corte de Tailwind: sm 40rem, md 48rem, lg 64rem. Grilla de 12 columnas con separación de 1.5rem desde md (desde lg en contacto y preguntas). Debe funcionar a 320 px y 200 % de zoom.
+Contenedor `.contenedor`: 80rem, márgenes 1.25rem / sm 2rem / lg 2.5rem. Puntos de corte de Tailwind (sm 40rem, md 48rem, lg 64rem, xl 80rem). Sin desborde horizontal a 320 px.
 
-**Encabezado.** Móvil: firma y botón WhatsApp en una fila, navegación en una segunda fila con filete superior. lg: firma, navegación alineada a la derecha y botón en una sola fila. Debajo, el **folio**: una franja entre dos líneas de tinta de 1 px, texto meta, «Colmenas del Río · Uruguay» a la izquierda y el tema en gris a la derecha.
+**Ritmo.** Relleno vertical de sección 1.75–2rem en móvil (`py-7`, `py-8`) y 2.75–3rem desde md (`py-11`, `py-12`). Entre títulos y contenido, 1.25–1.75rem. Las secciones se distinguen por superficie y composición, no por aire. La única línea de tinta que abre una sección es la de preguntas frecuentes, que comparte papel con contacto.
 
-**Primera pantalla.** Móvil: h1, apoyo, acciones apiladas, nota y foto original a sangre (se come los márgenes del contenedor por debajo de sm), epígrafe debajo. Desde sm se usa la imagen panorámica. md: h1 en las 12 columnas; abajo, apoyo y nota a la izquierda y acciones a la derecha; luego, foto en las 12 columnas. lg: h1 en columnas 1–8 y acciones en 9–12 en la misma fila; debajo, la foto ocupa las 12 columnas (hasta 1200 px), con el epígrafe debajo.
+**Encabezado.** Sobre tinta, sin botón propio (las acciones del héroe están inmediatamente debajo). Firma a la izquierda, navegación a la derecha; en móvil la navegación baja a una segunda fila.
 
-**Ritmo de secciones.** Separaciones de `mt-12` (3rem) y `md:mt-16` (4rem). Las secciones sobre papel abren con una línea de tinta de 1 px y 1.5rem de aire. Patrón de cabecera: h2 en columnas 1–6 y lead en 8–12. La sección de reubicación es una banda oliva a ancho completo con 2.5rem / md 3.5rem de relleno vertical.
+**Héroe.** h1 a todo el ancho. Debajo, lead y acciones: en una fila desde lg (lead a la izquierda, botones a la derecha), apilados por debajo. Luego la foto a sangre: original 900 × 855 por debajo de 640 px; panorámica 1870 × 841 desde 640 px, centrada hasta 1600 px, sin epígrafe: la foto cierra el bloque de tinta y da paso al papel.
 
-**Lámina.** Móvil: tres pasos apilados con 3rem entre sí. md: tres columnas sin separación; cada panel cancela con margen negativo el relleno derecho de su columna (2rem, lg 3rem) para que los tres dibujos se toquen y lean como una sola lámina.
+**Servicio.** Cabecera: solo el h2. Dos artículos: en móvil, foto 4:5 a la izquierda (5/12) y texto a la derecha; desde md, dos columnas con foto 3:2 y, debajo, título y rasgos a la izquierda, texto y enlace a la derecha.
 
-**Móvil.** Objetivos táctiles mínimos de 44 px (`min-h-11`); botones de 48 px. Por debajo de 48rem, `scroll-padding-bottom: 6rem` deja libre la barra de contacto fija; `scroll-padding-top: 1.5rem` siempre.
+**Reubicación.** Banda oliva. Desde lg: declaración y pasos en columnas 1–4, esquema en 5–12. Por debajo: declaración, esquema y pasos (en tres columnas desde sm).
+
+**Contacto.** Desde lg: columnas 1–5 con título, lead, acciones, teléfono alternativo, correo y la foto de equipo, que se estira (`flex-1`) hasta igualar el alto del formulario; columnas 6–12 con el preparador. Sin JavaScript el preparador se oculta.
+
+**Preguntas.** h2 en 1–4, lista en 5–12.
+
+**Pie.** Tinta, una fila desde md: firma y descripción, contactos.
+
+**Móvil.** Objetivos táctiles de 44 px o más; botones de 48 px. `scroll-padding-bottom: 6rem` por la barra fija.
 
 ## Elevation & Depth
 
-Plano. No hay `box-shadow` en ningún lugar. La profundidad se arma con tono y línea: papel alzado para controles, papel prensado para hover, la banda oliva y el pie en tinta como cambios de plano, y líneas de tinta para jerarquía. La barra móvil fija se separa del contenido con una línea de tinta de 1 px, no con sombra.
+Plano: sin `box-shadow`. La profundidad la dan los cambios de superficie y el movimiento: la foto del héroe se desplaza más lento que la página y la foto de equipo deriva dentro de su marco.
 
-### Named Rules
-**The Sin Sombra Rule.** Ninguna superficie se levanta con sombra. Si algo necesita separarse, recibe una línea o un cambio de tono.
+**The Sin Sombra Rule.** Si algo necesita separarse, recibe una línea, un cambio de tono o una superficie.
 
 ## Shapes
 
-**Esquinas.** 4 px en botones, campos, opciones, caja de vista previa y enlace de salto. El anillo de foco redondea 2 px. La foto y las secciones no tienen radio. En la lámina, los rectángulos rellenos llevan 1.5–3 de radio en unidades del viewBox.
+Esquinas de 4 px en botones, campos, opciones, tarjeta del preparador y vista previa. Fotos y secciones rectas. Bordes de control 1.5 px. Tinta 1 px en la tabla de contacto y la barra móvil; 2 px sobre el preparador en móvil. La vista previa del mensaje lleva un filo oliva de 3 px a la izquierda.
 
-**Líneas.** Tinta 1 px para el folio, la tabla de contacto y la barra móvil. Tinta 2 px para abrir secciones, la franja «¿No sabés qué insecto es?» y el preparador de mensaje. Filete 1 px (`rule`) entre bloques de servicio, filas y preguntas; `olive-rule` y `ink-rule` cumplen ese papel sobre oliva y tinta. Bordes de control de 1.5 px. Guiones de 24 × 1 px como marcador de nota (óxido) o de epígrafe (tinta).
+**Íconos.** Trazo propio en `graficos.tsx` (24, trazo 1.75, `currentColor`, `aria-hidden`): teléfono, correo, flecha, copiar y tilde de copiado. WhatsApp es la única marca de terceros (Simple Icons, CC0).
 
-**Iconografía.** Íconos propios de trazo en `graficos.tsx`: viewBox 24, trazo 1.75, puntas y uniones redondeadas, 1.25em, `currentColor`, siempre ocultos (`aria-hidden`) junto a texto: teléfono, correo, flecha (derecha y abajo), copiar. La única marca de terceros es WhatsApp, rellena, trazado de Simple Icons (CC0). El signo de las preguntas son dos barras de 2 px en CSS.
+**Fotografía.** Hero: foto real en móvil; panorámica ampliada con IA desde 640 px. Abeja, avispa y equipo son imágenes generadas. La página no lleva créditos ni avisos sobre su origen (decisión del usuario); el registro está en `docs/ENTREGA.md`. Nunca texto superpuesto. Las fotos se recortan con `object-fit: cover` dentro de marcos fijos; los efectos de profundidad solo trasladan o escalan la imagen dentro del marco, sin deformarla.
 
-**Fotografía.** En móvil (<640 px), foto real original (900 × 855), con crédito «Foto: Colmenas del Río.», servida en AVIF y WebP (480, 600, 760, 900). Desde 640 px, ampliación panorámica con IA (1870 × 841) de esa misma foto, solicitada por el usuario el 2026-11-04, con epígrafe que aclara la ampliación. Versiones AVIF y WebP de 640, 960, 1200, 1600 y 1870 px. Ambas se muestran enteras, rectangulares, sin filtros ni texto superpuesto. Fuente y prompt en `docs/hero-panoramico.md`.
-
-**Ilustración.** Lámina de reubicación: tres paneles SVG de 320 × 200 (colonia en un muro, caja de traslado, apiario de destino), trazo papel 1.75 sobre oliva, volúmenes rellenos en oliva hondo. Comparten suelo en y = 182 y recorrido punteado en y = 22 (`olive-text`, 1.5, `2 7`); en md+ se unen en una sola lámina. En móvil el recorrido (y la flecha final) se ocultan porque los paneles están apilados. El cierre añade un contorno discreto de Uruguay con el sur sombreado como región de destino. El epígrafe aclara el carácter conceptual y distingue destino de zona de atención.
+**Esquema de reubicación** (`EsquemaReubicacion.tsx`). Un solo SVG de 640 × 340: muro bajo un alero con la cavidad y sus panales (cera), recorrido punteado en cera y contorno de Uruguay (Natural Earth 1:110m, dominio público) con el sur sombreado y tres colmenas de destino. Su única nota aclara un dato del servicio, no de la demo: el sur es destino de las colonias, no zona de atención.
 
 ## Components
 
 ### Buttons
-Rectángulos firmes con ícono a la izquierda, sin adorno.
-- **Shape:** 4 px, alto mínimo 3rem, relleno 0.625rem × 1.25rem, separación de ícono 0.625rem, borde 1.5px.
-- **Primario** (`.boton-primario`): oliva con texto papel. Una acción principal por bloque: WhatsApp.
-- **Secundario** (`.boton-secundario`): transparente, borde y texto tinta. Llamar, copiar, ir a contacto.
-- **Hover:** primario a oliva hondo; secundario a papel prensado (160 ms).
-- **Active:** baja 1 px (`translateY(1px)`, 120 ms).
-- **Focus-visible:** anillo de 2 px, separado 3 px, óxido (cera en fondos oscuros).
-- **Botón del encabezado:** alto 44 px, relleno lateral 0.875rem / sm 1rem; dice «WhatsApp» en móvil (solo para lector por debajo de 360 px) y «Consultar por WhatsApp» desde md.
-- **Par de acciones:** WhatsApp + «Llamar al …» en fila desde sm; en columna dentro de las columnas angostas del héroe, contacto y cierre.
+- **Base** (`.boton`): 4 px, alto 3rem, relleno 0.625rem × 1.25rem, ícono a la izquierda, sin corte de línea.
+- **Primario** (`.boton-primario`): oliva, texto papel; hover barre oliva hondo.
+- **Secundario** (`.boton-secundario`): borde y texto tinta; hover barre tinta y el texto pasa a papel.
+- **Claro** (`.boton-claro`, sobre tinta): papel con texto tinta; hover barre cera.
+- **Contorno claro** (`.boton-contorno-claro`, sobre tinta): borde `ink-text`, texto papel; hover barre papel y el texto pasa a tinta.
+- Par de acciones (WhatsApp y «Llamar al …») en el héroe y en contacto; el preparador cierra con «Continuar en WhatsApp» y «Copiar mensaje».
 
 ### Links
-- **Enlace** (`.enlace`): subrayado de 1 px en el color del texto, separado 0.22em. Hover: subrayado óxido de 2 px (160 ms). Mínimo 44 px de alto en listas y tablas.
-- **Navegación:** peso 500, sin subrayado en reposo; hover subrayado óxido de 2 px separado 0.4em. No hay estado de página actual (es una sola página con anclas). En móvil, fila propia bajo un filete.
-- **Enlace de salto:** oculto hasta recibir foco; entonces tinta con texto papel, fijo arriba a la izquierda.
+- **Enlace** (`.enlace`): subrayado 1 px; hover óxido 2 px (cera sobre tinta).
+- **Navegación** (`.nav-enlace`): texto `ink-text` que pasa a papel; trazo de cera de 2 px que crece desde la izquierda.
+- **Enlace con flecha** (`.enlace-flecha`): la flecha avanza 4 px en su dirección (hacia abajo en «Ver reubicación»).
 
-### Inputs / Fields
-- **Campo** (`.campo`): papel alzado, borde 1.5px `control`, 4 px, alto 3rem, relleno 0.625rem × 0.875rem. Etiqueta en 600 arriba y ayuda meta en gris debajo, vinculada con `aria-describedby`. Cursor óxido.
-- **Hover:** borde tinta.
-- **Focus-visible:** borde tinta y anillo óxido separado 1 px.
-- **Error / deshabilitado:** no existen; todos los datos son opcionales y no se valida nada.
+### Formulario
+- **Tarjeta del preparador:** desde sm, papel alzado con borde `control`; en móvil, sin caja, abierta con una línea de tinta de 2 px para ganar ancho.
+- **Campo** (`.campo`): papel, borde `control`; hover tinta; foco con borde tinta, fondo blanco y etiqueta en oliva.
+- **Opciones** (`.opcion`): fichas en tres columnas; radio propio (`appearance: none`) con punto que aparece con rebote; al elegir, un círculo oliva se expande desde el radio y el texto pasa a papel. Por debajo de 30rem, radio arriba y texto abajo. Foco: anillo óxido en la ficha.
+- **Copiar:** al copiar, el ícono pasa a un tilde que se dibuja y el botón dice «Copiado»; `role="status"` confirma o explica el error.
 
-### Opciones (radios)
-- **Estilo:** tres fichas en grilla de 3 columnas, separación 0.5rem, alto 3rem, papel alzado, borde 1.5px `control`, 4 px, radio nativo con `accent-color` papel.
-- **Hover:** borde tinta.
-- **Checked:** ficha completa en oliva, borde oliva, texto papel.
-- **Focus-visible:** el anillo óxido (2 px, separado 2 px) lo dibuja la ficha, no el radio.
-
-### Vista previa y estado de copia
-- **Vista previa:** caja papel alzado, borde 1px `control`, 4 px, relleno 1rem × 1.25rem; rótulo meta 600 gris «Tu mensaje» y el texto a 1.125rem.
-- **Estado** (`role="status"`): línea meta 500 en tinta, con alto reservado para que nada salte. Éxito: «Mensaje copiado.». Error: «No se pudo copiar automáticamente. El mensaje quedó seleccionado para que lo copies.» (el texto queda seleccionado). Sin color de estado: el mensaje dice lo que pasó.
-
-### Preguntas (details / summary)
-- **Cerrada:** fila de 56 px mínimo, pregunta en 600 a la izquierda, signo + de 20 px a la derecha, filete inferior.
-- **Hover:** la pregunta se subraya en óxido de 2 px.
-- **Abierta:** la barra vertical del signo gira 90° (200 ms) y queda como −; la respuesta en gris, hasta 60ch, se despliega en altura (220 ms) donde hay soporte.
-- **Focus-visible:** anillo óxido sobre el `summary`.
+### Preguntas
+`details` nativo; signo + que gira a −; respuesta que se despliega en altura donde hay soporte.
 
 ### Barra de contacto móvil
-Solo por debajo de md. Fija abajo, papel con línea de tinta superior, WhatsApp (primario) y Llamar (secundario) en dos columnas, respeta `safe-area-inset-bottom`. Arranca oculta; aparece solo cuando no hay en pantalla otro bloque con contacto (acciones del héroe, contacto, cierre, pie). Sin JavaScript nunca aparece.
+Por debajo de md, fija abajo con WhatsApp y Llamar. Aparece solo cuando no están en pantalla las acciones del héroe, el contacto ni el pie.
 
-### Lámina de reubicación (componente firma)
-Tres pasos numerados en serif sobre la banda oliva, cada uno con su panel, título menor y texto `olive-text`, separados por filetes `olive-rule`, cerrados con el epígrafe serif. El trazo se dibuja una vez al entrar en vista.
+## Movimiento
 
-### Movimiento
-- **Duraciones:** 120 ms (presión del botón), 160 ms (colores, bordes, subrayados), 200 ms (signo de preguntas, barra móvil), 220 ms (altura de respuestas).
-- **Curva:** `--ease-salida` = `cubic-bezier(0.22, 1, 0.36, 1)` en todas las transiciones propias.
-- **Lámina:** `.lamina .trazo` se dibuja con `stroke-dasharray: 1` y `stroke-dashoffset` de 1 a 0, atado a `view-timeline` del bloque, `animation-range: entry 10% cover 40%`. Todo dentro de `@supports ((animation-timeline: view()) and (animation-range: entry))` y `prefers-reduced-motion: no-preference`; sin soporte, la lámina se ve completa.
-- **Preguntas:** `interpolate-size: allow-keywords` y `::details-content` de altura 0 a `auto` con `content-visibility` discreto, solo bajo `@supports`; sin soporte abren de golpe.
-- **Barra móvil:** `translate` y `visibility` en 200 ms; oculta = desplazada 100 % hacia abajo e invisible (no recibe foco).
-- **Movimiento reducido:** sin desplazamiento suave, todas las transiciones y animaciones a 0.01 ms, la lámina estática y completa.
+Dos protagonistas y todo lo demás coordinado alrededor. Nada bloquea la lectura ni el contacto: no hay pantalla de carga, no se secuestra el desplazamiento y el contenido es visible sin JavaScript.
+
+**Curvas.** `--ease-expo` (0.16, 1, 0.3, 1) para entradas y barridos; `--ease-salida` (0.22, 1, 0.36, 1) para colores y trazos; `--ease-vaiven` (0.65, 0, 0.35, 1) para el viaje del esquema; `--ease-rebote` (0.34, 1.56, 0.64, 1) solo para objetos pequeños (punto del radio, íconos, colmenas que brotan).
+
+**Duraciones.** 140 ms presión · 180–240 ms colores y bordes · 320–420 ms barridos de hover y relleno de opciones · 800–1150 ms entradas · 1400 ms viaje.
+
+1. **Entrada del héroe** (CSS, al cargar). El encabezado aparece (0 ms). Cada línea del h1 sube dentro de su máscara (1000 ms, escalonado 110 ms). Lead y botones entran a 380 y 480 ms. La foto se abre como un obturador: dos cortinas de tinta se recogen hacia arriba y hacia abajo (`scaleY`, 1150 ms desde 260 ms) mientras la imagen baja de escala 1.18 a 1 (1700 ms). Todo termina antes de 2 s; los botones se pueden usar desde el primer cuadro.
+2. **Esquema de reubicación** (CSS y SMIL, una vez al entrar en vista). `IntersectionObserver` al 50 % pasa `data-estado` de `listo` a `activo`. Muro y alero se dibujan en cascada (0–900 ms), los panales en cera (450 ms), el contorno del país (450–1350 ms). A 1000 ms un cajón de traslado sale de la cavidad y recorre la ruta (`animateMotion`, 1400 ms, vaivén) mientras una máscara revela el punteado justo detrás. Al llegar (2350 ms) el sur se ilumina, dos pulsos se abren desde el punto de llegada y brotan las colmenas de destino. Las barras de los tres pasos se llenan sincronizadas con cada tramo.
+3. **Acompañamiento ligado al desplazamiento** (`animation-timeline: view()`, solo donde hay soporte): la foto del héroe baja 5 % al salir; abeja y avispa se descubren desde lados opuestos (un velo de papel que se recoge con `scaleX`) mientras la imagen se asienta de 1.14 a 1; la foto de equipo deriva ±4 % dentro de su marco.
+4. **Microinteracciones:** relleno que barre los botones y giro breve del ícono (solo con `hover: hover`); escala 0.97 al presionar botones y opciones; anillo de foco que se cierra de 8 a 3 px de separación; subrayados y flechas descritos arriba.
+
+Todo es `transform` y `opacity`, salvo el trazo del esquema (`stroke-dashoffset`, una sola vez, en un SVG pequeño).
+
+**Movimiento reducido.** Sin desplazamiento suave, sin entradas, sin cortinas ni velos, sin parallax; el esquema queda completo y quieto (el cajón no se muestra). Transiciones a 0.01 ms. **Sin JavaScript:** el héroe y el acompañamiento funcionan (son CSS), el esquema se ve completo y el preparador se oculta.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** usar solo los tokens de `@theme` en `globals.css`; un color nuevo entra primero ahí con su contraste medido en comentario.
-- **Do** abrir cada sección nueva sobre papel con una línea de tinta de 2 px y separarla con 6rem / md 9rem.
-- **Do** componer en la grilla de 12 columnas dentro de `.contenedor`, con h2 en 1–6 y lead en 8–12.
-- **Do** poner títulos en Archivo 760 al 80% (h1, h2) o 700 al 80–85% (h3 y menores), con `text-wrap: balance`.
-- **Do** marcar toda superficie oscura con `.sobre-oliva` o `.sobre-tinta` para que el foco sea cera.
-- **Do** mantener 44 px mínimos en todo lo tocable y WhatsApp + llamada visibles en cada bloque de cierre.
-- **Do** usar `--ease-salida` y las duraciones 120/160/200/220 ms; envolver toda animación nueva en `prefers-reduced-motion: no-preference` y dejar el estado final visible sin ella.
-- **Do** rotular toda ilustración como conceptual y mantener sus trazos en papel sobre oliva, con suelo y recorrido compartidos si se agregan paneles.
+- **Do** usar solo los tokens de `@theme` en `globals.css`.
+- **Do** separar secciones con superficie y composición, con 1.75–2rem / 2.75–3rem de relleno.
+- **Do** mantener WhatsApp y llamada en la primera pantalla y en contacto.
+- **Do** marcar toda superficie oscura con `.sobre-oliva` o `.sobre-tinta` (foco en cera).
+- **Do** animar con `transform` y `opacity`; envolver todo en `prefers-reduced-motion: no-preference` y dejar el estado final visible sin animación.
+- **Do** sumar un efecto nuevo solo si acompaña a una de las dos protagonistas, con una curva y una duración de la lista.
 
 ### Don't:
-- **Don't** volver a la demo anterior: nada de fondo verde petróleo, acentos amarillos, patrón de panal, hexágonos, foto recortada en forma, abejitas o apiarios ilustrados de adorno, ni bloques de servicio ilustrados.
-- **Don't** usar el óxido como fondo, texto corrido o botón, ni como foco sobre oliva (1.52:1).
-- **Don't** usar `rule` como único borde de un control.
-- **Don't** agregar sombras, degradados, texturas ni radios mayores a 4 px.
-- **Don't** usar Source Serif 4 fuera de la sección de reubicación ni itálica fuera de *Apis mellifera*.
-- **Don't** agregar rótulos sobre los títulos (kickers), íconos en tarjetas ni emojis.
-- **Don't** usar fotos de banco o de otro caso; ni recortar, filtrar o superponer texto a la foto real. La ampliación panorámica del hero y las fotos de comparación y oficio generadas con IA son excepciones pedidas por el usuario para esta demo y se identifican en los epígrafes.
+- **Don't** volver a rótulos numerados, «Fig.», folios, kickers ni frases genéricas.
+- **Don't** repetir el mismo efecto de aparición en todos los bloques ni sumar llamadas a la acción redundantes.
+- **Don't** usar el óxido sobre tinta u oliva, ni la cera sobre papel.
+- **Don't** agregar sombras, degradados, texturas de panal, hexágonos ni radios mayores a 4 px.
+- **Don't** superponer texto a las fotos ni deformarlas.
 - **Don't** condensar el texto corrido ni bajar el cuerpo de 1.0625rem.
 
 ### Contenido

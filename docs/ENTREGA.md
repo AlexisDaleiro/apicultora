@@ -22,7 +22,7 @@ El hero panorámico incluye una ampliación generada con IA solicitada por el us
 | --- | --- |
 | `public/img/{abeja,avispa}-{480,800,1200}.{avif,webp}` | Dos macros generadas con `image_gen`, rotuladas como referencias ilustrativas. No representan ejemplares documentados ni una guía exhaustiva de identificación. Originales en `docs/referencias/fuente/` y prompts en `docs/cuaderno-de-campo.md`. |
 | `public/img/equipo-{480,800,1200}.{avif,webp}` | Escena generada con dos personas ficticias para presentar el oficio. No muestra al equipo real de la empresa; así se identifica en el texto alternativo y el epígrafe. Se podrá reemplazar por material real del cliente. |
-| `MapaDestino` en `src/components/graficos.tsx` | Contorno vectorial de Uruguay derivado de Natural Earth (dominio público, 1:110m). El sombreado representa el sur del país como destino general; no muestra ubicaciones concretas ni cobertura comercial. |
+| Esquema de reubicación en `src/components/EsquemaReubicacion.tsx` | Contorno vectorial de Uruguay derivado de Natural Earth (dominio público, 1:110m). El sombreado representa el sur del país como destino general; no muestra ubicaciones concretas ni cobertura comercial. |
 
 ## Datos comerciales a confirmar
 

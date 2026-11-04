@@ -3,7 +3,7 @@
 import { useRef, useState, type ChangeEvent } from "react";
 import { sitio, whatsappLink } from "@/content/sitio";
 import { armarMensaje, type DatosConsulta, type Especie } from "@/lib/mensaje";
-import { IconoCopiar, IconoWhatsApp } from "./graficos";
+import { IconoCheck, IconoCopiar, IconoWhatsApp } from "./graficos";
 
 const OPCIONES: { valor: Exclude<Especie, "">; etiqueta: string }[] = [
   { valor: "abejas", etiqueta: "Abejas" },
@@ -48,27 +48,24 @@ export function PreparadorMensaje() {
   }
 
   return (
-    <form aria-labelledby="titulo-preparador" onSubmit={(e) => e.preventDefault()} className="border-t-2 border-ink pt-6">
-      <h3 id="titulo-preparador" className="text-[1.5rem] leading-tight font-bold [font-stretch:85%] md:text-[1.75rem]">
+    <form aria-labelledby="titulo-preparador" onSubmit={(e) => e.preventDefault()} className="border-t-2 border-ink pt-5 sm:rounded-[4px] sm:border sm:border-control sm:bg-paper-raised sm:p-6 md:p-7">
+      <h3 id="titulo-preparador" className="text-[1.625rem] leading-tight font-extrabold [font-stretch:78%] md:text-[2rem]">
         Prepará un primer mensaje
       </h3>
-      <p className="mt-1 text-muted">Todos los datos son opcionales.</p>
+      <p className="mt-0.5 text-meta text-muted">Todos los datos son opcionales.</p>
 
-      <fieldset className="mt-7">
+      <fieldset className="mt-5">
         <legend className="font-semibold">¿Qué observás?</legend>
         <div className="mt-3 grid grid-cols-3 gap-2">
           {OPCIONES.map((opcion) => (
-            <label
-              key={opcion.valor}
-              className="flex min-h-12 cursor-pointer items-center gap-2.5 rounded-[4px] border-[1.5px] border-control bg-paper-raised px-3 transition-colors duration-160 ease-(--ease-salida) hover:border-ink has-checked:border-olive has-checked:bg-olive has-checked:text-paper has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-oxide"
-            >
+            <label key={opcion.valor} className="opcion">
               <input
                 type="radio"
                 name="especie"
                 value={opcion.valor}
                 checked={datos.especie === opcion.valor}
                 onChange={actualizar("especie")}
-                className="size-[1.125rem] shrink-0 accent-paper focus-visible:outline-none"
+                className="opcion-radio"
               />
               <span className="font-medium">{opcion.etiqueta}</span>
             </label>
@@ -76,7 +73,7 @@ export function PreparadorMensaje() {
         </div>
       </fieldset>
 
-      <div className="mt-6">
+      <div className="campo-grupo mt-5">
         <label htmlFor="zona" className="font-semibold">
           Localidad o zona
         </label>
@@ -96,7 +93,7 @@ export function PreparadorMensaje() {
         />
       </div>
 
-      <div className="mt-6">
+      <div className="campo-grupo mt-5">
         <label htmlFor="lugar" className="font-semibold">
           ¿Dónde se encuentra?
         </label>
@@ -116,11 +113,11 @@ export function PreparadorMensaje() {
         />
       </div>
 
-      <div className="mt-8 rounded-[4px] border border-control bg-paper-raised px-5 py-4">
+      <div className="mt-6 rounded-[4px] border-l-[3px] border-olive bg-paper px-4 py-3">
         <p id="titulo-vista-previa" className="text-meta font-semibold text-muted">
           Tu mensaje
         </p>
-        <p ref={vistaPrevia} aria-labelledby="titulo-vista-previa" className="mt-1.5 text-[1.125rem] leading-relaxed break-words">
+        <p ref={vistaPrevia} aria-labelledby="titulo-vista-previa" className="mt-1 text-[1.125rem] leading-relaxed break-words">
           {mensaje}
         </p>
       </div>
@@ -130,9 +127,9 @@ export function PreparadorMensaje() {
           <IconoWhatsApp />
           Continuar en WhatsApp
         </a>
-        <button type="button" className="boton boton-secundario" onClick={copiar}>
-          <IconoCopiar />
-          Copiar mensaje
+        <button type="button" className="boton boton-secundario" data-copiado={copia === "copiado" || undefined} onClick={copiar}>
+          {copia === "copiado" ? <IconoCheck /> : <IconoCopiar />}
+          {copia === "copiado" ? "Copiado" : "Copiar mensaje"}
         </button>
       </div>
       <p className="mt-3 text-meta text-muted">Se abrirá WhatsApp con tu mensaje preparado. Revisalo antes de enviarlo.</p>

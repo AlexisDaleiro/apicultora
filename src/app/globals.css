@@ -14,30 +14,34 @@
   --color-olive-text: #c9cdb9; /* 5.79:1 sobre oliva */
   --color-olive-rule: #66735c;
   --color-oxide: #a1442f; /* 5.44:1 */
-  --color-wax: #e8c9a0; /* 5.96:1 sobre oliva, 9.66:1 sobre tinta: anillo de foco en superficies oscuras */
-  --color-ink-text: #c3c7bb; /* 8.87:1 sobre tinta, texto secundario del pie */
+  --color-wax: #e8c9a0; /* 5.96:1 sobre oliva, 9.66:1 sobre tinta */
+  --color-ink-text: #c3c7bb; /* 8.87:1 sobre tinta */
   --color-ink-rule: #3e4741;
 
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-source-serif), ui-serif, Georgia, serif;
 
-  --text-display: clamp(2.625rem, 1.15rem + 6.3vw, 7rem);
-  --text-display--line-height: 0.93;
-  --text-display--letter-spacing: -0.025em;
-  --text-h2: clamp(1.875rem, 1.2rem + 2.9vw, 3.75rem);
-  --text-h2--line-height: 1;
-  --text-h2--letter-spacing: -0.02em;
-  --text-h3: clamp(1.75rem, 1.35rem + 1.5vw, 2.5rem);
-  --text-h3--line-height: 1.05;
+  --text-display: clamp(2.75rem, 0.5rem + 9.9vw, 9.5rem);
+  --text-display--line-height: 0.9;
+  --text-display--letter-spacing: -0.03em;
+  --text-h2: clamp(2rem, 1.3rem + 2.6vw, 3.5rem);
+  --text-h2--line-height: 0.98;
+  --text-h2--letter-spacing: -0.025em;
+  --text-h3: clamp(1.625rem, 1.3rem + 1.2vw, 2.25rem);
+  --text-h3--line-height: 1;
   --text-h3--letter-spacing: -0.015em;
-  --text-lead: clamp(1.125rem, 1rem + 0.45vw, 1.375rem);
+  --text-lead: clamp(1.125rem, 1rem + 0.45vw, 1.3125rem);
   --text-lead--line-height: 1.45;
   --text-body: clamp(1.0625rem, 1rem + 0.2vw, 1.1875rem);
   --text-body--line-height: 1.6;
   --text-meta: 0.875rem;
   --text-meta--line-height: 1.45;
 
+  /* Movimiento: ver «Movimiento» en DESIGN.md. */
   --ease-salida: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-vaiven: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-rebote: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @layer base {
@@ -45,7 +49,7 @@
     background: var(--color-paper);
     color: var(--color-ink);
     -webkit-text-size-adjust: 100%;
-    scroll-padding-top: 1.5rem;
+    scroll-padding-top: 1rem;
   }
 
   @media (max-width: 47.99rem) {
@@ -104,6 +108,20 @@
   .sobre-tinta :focus-visible {
     outline-color: var(--color-wax);
   }
+
+  @media (prefers-reduced-motion: no-preference) {
+    /* El anillo se cierra sobre el control en vez de aparecer de golpe. */
+    :focus-visible {
+      animation: foco 220ms var(--ease-salida);
+    }
+  }
+}
+
+@keyframes foco {
+  from {
+    outline-offset: 8px;
+    outline-color: transparent;
+  }
 }
 
 @layer components {
@@ -126,7 +144,13 @@
     }
   }
 
+  /* ---------- Botones: el relleno de hover barre de izquierda a derecha ---------- */
+
   .boton {
+    --relleno: transparent;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -139,53 +163,100 @@
     font-size: 1.0625rem;
     line-height: 1.2;
     text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
     transition:
-      background-color 160ms var(--ease-salida),
-      border-color 160ms var(--ease-salida),
-      color 160ms var(--ease-salida),
-      transform 120ms var(--ease-salida);
+      color 220ms var(--ease-salida),
+      border-color 220ms var(--ease-salida),
+      transform 140ms var(--ease-salida);
     -webkit-tap-highlight-color: transparent;
   }
 
-  .epigrafe {
-    font-size: var(--text-meta);
-    line-height: var(--text-meta--line-height);
-    color: var(--color-muted);
+  .boton::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--relleno);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 380ms var(--ease-expo);
+  }
+
+  .boton svg {
+    flex-shrink: 0;
+    transition: transform 320ms var(--ease-rebote);
   }
 
   .boton:active {
-    transform: translateY(1px);
+    transform: scale(0.97);
+  }
+
+  @media (hover: hover) {
+    .boton:hover::before {
+      transform: scaleX(1);
+    }
+
+    .boton:hover svg {
+      transform: rotate(-10deg) scale(1.1);
+    }
+  }
+
+  .boton:focus-visible::before {
+    transform: scaleX(1);
   }
 
   .boton-primario {
+    --relleno: var(--color-olive-deep);
     background: var(--color-olive);
     color: var(--color-paper);
   }
 
-  .boton-primario:hover {
-    background: var(--color-olive-deep);
-  }
-
   .boton-secundario {
+    --relleno: var(--color-ink);
     border-color: var(--color-ink);
     color: var(--color-ink);
   }
 
-  .boton-secundario:hover {
-    background: var(--color-paper-press);
+  .boton-claro {
+    --relleno: var(--color-wax);
+    background: var(--color-paper);
+    color: var(--color-ink);
   }
 
-  /* Nombre científico: itálica real de Archivo (no sintética). */
-  .nombre-cientifico {
-    font-family: var(--font-archivo-italica), var(--font-sans);
-    font-style: italic;
-    font-synthesis: none;
+  .boton-contorno-claro {
+    --relleno: var(--color-paper);
+    border-color: var(--color-ink-text);
+    color: var(--color-paper);
   }
+
+  @media (hover: hover) {
+    .boton-secundario:hover {
+      color: var(--color-paper);
+    }
+
+    .boton-contorno-claro:hover {
+      color: var(--color-ink);
+      border-color: var(--color-paper);
+    }
+  }
+
+  .boton-secundario:focus-visible {
+    color: var(--color-paper);
+  }
+
+  .boton-contorno-claro:focus-visible {
+    color: var(--color-ink);
+  }
+
+  /* ---------- Enlaces ---------- */
 
   .enlace {
     text-decoration-line: underline;
     text-decoration-color: currentColor;
-    transition: text-decoration-color 160ms var(--ease-salida), color 160ms var(--ease-salida);
+    transition:
+      text-decoration-color 180ms var(--ease-salida),
+      color 180ms var(--ease-salida);
   }
 
   .enlace:hover {
@@ -193,16 +264,73 @@
     text-decoration-thickness: 2px;
   }
 
+  .sobre-tinta .enlace:hover {
+    text-decoration-color: var(--color-wax);
+  }
+
+  /* Navegación: un trazo crece desde la izquierda debajo del texto. */
+  .nav-enlace > span {
+    position: relative;
+  }
+
+  .nav-enlace > span::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: -0.3em;
+    height: 2px;
+    background: var(--color-wax);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 320ms var(--ease-expo);
+  }
+
+  .nav-enlace:hover > span::after,
+  .nav-enlace:focus-visible > span::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Enlace con flecha: la flecha avanza en su dirección. */
+  .enlace-flecha > span {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 180ms var(--ease-salida);
+  }
+
+  .enlace-flecha svg {
+    transition: transform 320ms var(--ease-rebote);
+  }
+
+  .enlace-flecha:hover > span {
+    text-decoration-color: var(--color-oxide);
+    text-decoration-thickness: 2px;
+  }
+
+  .enlace-flecha:hover svg,
+  .enlace-flecha:focus-visible svg {
+    transform: translateX(4px);
+  }
+
+  .enlace-flecha[href="#reubicacion"]:hover svg,
+  .enlace-flecha[href="#reubicacion"]:focus-visible svg {
+    transform: translateY(4px);
+  }
+
+  /* ---------- Formulario ---------- */
+
   .campo {
     width: 100%;
     min-height: 3rem;
     padding: 0.625rem 0.875rem;
     border: 1.5px solid var(--color-control);
     border-radius: 4px;
-    background: var(--color-paper-raised);
+    background: var(--color-paper);
     color: var(--color-ink);
     font: inherit;
-    transition: border-color 160ms var(--ease-salida);
+    transition:
+      border-color 180ms var(--ease-salida),
+      background-color 180ms var(--ease-salida);
   }
 
   .campo::placeholder {
@@ -216,6 +344,138 @@
   .campo:focus-visible {
     outline-offset: 1px;
     border-color: var(--color-ink);
+    background: #fff;
+  }
+
+  .campo-grupo > label {
+    transition: color 180ms var(--ease-salida);
+  }
+
+  .campo-grupo:focus-within > label {
+    color: var(--color-olive);
+  }
+
+  /* Opciones: la ficha se llena de oliva desde el punto del radio. */
+  .opcion {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    min-height: 3rem;
+    cursor: pointer;
+    align-items: center;
+    gap: 0.5rem;
+    padding-inline: 0.625rem;
+    border: 1.5px solid var(--color-control);
+    border-radius: 4px;
+    background: var(--color-paper);
+    white-space: nowrap;
+    transition:
+      border-color 180ms var(--ease-salida),
+      color 240ms var(--ease-salida),
+      transform 140ms var(--ease-salida);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .opcion::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 1.2rem;
+    top: 50%;
+    width: 220%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color-olive);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 420ms var(--ease-expo);
+  }
+
+  /* Teléfonos angostos: radio arriba y texto abajo, para que «Avispas» entre entera. */
+  @media (max-width: 29.99rem) {
+    .opcion {
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.25rem;
+      min-height: 3.75rem;
+      padding: 0.5rem 0.25rem;
+    }
+
+    .opcion::before {
+      left: 50%;
+      top: 1.1rem;
+    }
+  }
+
+  .opcion:hover {
+    border-color: var(--color-ink);
+  }
+
+  .opcion:active {
+    transform: scale(0.97);
+  }
+
+  .opcion:has(:checked) {
+    border-color: var(--color-olive);
+    color: var(--color-paper);
+  }
+
+  .opcion:has(:checked)::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .opcion:has(:focus-visible) {
+    outline: 2px solid var(--color-oxide);
+    outline-offset: 2px;
+  }
+
+  .opcion-radio {
+    appearance: none;
+    display: grid;
+    place-content: center;
+    flex-shrink: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin: 0;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .opcion-radio::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: currentColor;
+    transform: scale(0);
+    transition: transform 280ms var(--ease-rebote) 60ms;
+  }
+
+  .opcion-radio:checked::before {
+    transform: scale(1);
+  }
+
+  .opcion-radio:focus-visible {
+    outline: none;
+  }
+
+  /* Ícono de copiado: el tilde se dibuja. */
+  .check-dibujo {
+    stroke-dasharray: 1;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .check-dibujo {
+      animation: trazar 360ms var(--ease-salida) 40ms both;
+    }
+  }
+
+  /* Nombre científico: itálica real de Archivo (no sintética). */
+  .nombre-cientifico {
+    font-family: var(--font-archivo-italica), var(--font-sans);
+    font-style: italic;
+    font-synthesis: none;
   }
 }
 
@@ -230,16 +490,41 @@
   display: none;
 }
 
+.pregunta .signo::before,
 .pregunta .signo::after {
-  transition: transform 200ms var(--ease-salida);
+  content: "";
+  position: absolute;
+  background: currentColor;
+}
+
+.pregunta .signo::before {
+  inset-inline: 0;
+  top: 50%;
+  height: 2px;
+  translate: 0 -50%;
+}
+
+.pregunta .signo::after {
+  inset-block: 0;
+  left: 50%;
+  width: 2px;
+  translate: -50% 0;
+  transition: transform 260ms var(--ease-expo);
 }
 
 .pregunta[open] .signo::after {
   transform: rotate(90deg);
 }
 
-.pregunta summary:hover .pregunta-texto {
+.pregunta-texto {
   text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 180ms var(--ease-salida);
+}
+
+.pregunta summary:hover .pregunta-texto {
   text-decoration-color: var(--color-oxide);
 }
 
@@ -252,8 +537,8 @@
     block-size: 0;
     overflow: clip;
     transition:
-      block-size 220ms var(--ease-salida),
-      content-visibility 220ms allow-discrete;
+      block-size 260ms var(--ease-salida),
+      content-visibility 260ms allow-discrete;
   }
 
   .pregunta[open]::details-content {
@@ -261,32 +546,263 @@
   }
 }
 
-/* ---------- Lámina de reubicación: el trazo se dibuja al entrar en vista ---------- */
+/* =====================================================================
+   Movimiento de la página
+   Protagonistas: (1) entrada del héroe y (2) esquema de reubicación.
+   Todo lo demás acompaña. Sin soporte o con movimiento reducido,
+   el contenido queda en su estado final, completo y quieto.
+   ===================================================================== */
 
-/* El recorrido une las tres láminas solo cuando están lado a lado. */
-@media (max-width: 47.99rem) {
-  .lamina .recorrido {
-    display: none;
+@keyframes trazar {
+  from {
+    stroke-dashoffset: 1;
   }
 }
 
+@keyframes linea-sube {
+  from {
+    transform: translateY(108%);
+  }
+}
+
+@keyframes entra {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@keyframes cortina {
+  to {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes acercar {
+  from {
+    scale: 1.18;
+  }
+}
+
+@keyframes deriva {
+  to {
+    translate: 0 5%;
+  }
+}
+
+@keyframes deriva-contacto {
+  from {
+    translate: 0 -4%;
+  }
+  to {
+    translate: 0 4%;
+  }
+}
+
+@keyframes descubrir {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes asentar {
+  from {
+    scale: 1.14;
+  }
+}
+
+@keyframes surgir {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes brotar {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes pulso {
+  from {
+    opacity: 0.9;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+@keyframes viaje {
+  0% {
+    opacity: 0;
+  }
+  6%,
+  86% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+
+@keyframes llenar {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes paso-activo {
+  from {
+    opacity: 0.4;
+  }
+}
+
+/* Titular del héroe: cada línea sube dentro de su propia máscara. */
+.linea {
+  display: block;
+  overflow: clip;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.linea > span {
+  display: block;
+}
+
+.cortina,
+.velo,
+.marcador {
+  display: none;
+}
+
+.pulso {
+  opacity: 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  @supports ((animation-timeline: view()) and (animation-range: entry)) {
-    @keyframes trazar {
-      from {
-        stroke-dashoffset: 1;
-      }
+  /* ---- (1) Héroe: titular escalonado y foto que se abre como un obturador ---- */
+
+  .linea > span {
+    animation: linea-sube 1000ms var(--ease-expo) both;
+    animation-delay: calc(80ms + var(--i, 0) * 110ms);
+  }
+
+  .entra {
+    animation: entra 800ms var(--ease-expo) both;
+    animation-delay: var(--d, 0ms);
+  }
+
+  .cortina {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    inset-inline: 0;
+    height: 50.5%;
+    background: var(--color-ink);
+    animation: cortina 1150ms var(--ease-expo) 260ms both;
+  }
+
+  .cortina-arriba {
+    top: 0;
+    transform-origin: top;
+  }
+
+  .cortina-abajo {
+    bottom: 0;
+    transform-origin: bottom;
+  }
+
+  .hero-foto img {
+    animation: acercar 1700ms var(--ease-expo) 260ms both;
+  }
+
+  /* ---- (2) Esquema de reubicación (EsquemaReubicacion.tsx) ---- */
+
+  .esquema[data-estado="listo"] * {
+    animation-play-state: paused !important;
+  }
+
+  .esquema[data-estado] .trazo {
+    stroke-dasharray: 1;
+    animation: trazar var(--dur, 700ms) var(--ease, var(--ease-salida)) var(--d, 0ms) both;
+  }
+
+  .esquema[data-estado] .surge {
+    animation: surgir var(--dur, 500ms) var(--ease-salida) var(--d, 0ms) both;
+  }
+
+  .esquema[data-estado] .brota {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: brotar 520ms var(--ease-rebote) var(--d, 0ms) both;
+  }
+
+  .esquema[data-estado] .pulso {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: pulso 1500ms var(--ease-salida) var(--d, 0ms) forwards;
+  }
+
+  .esquema[data-estado] .marcador {
+    display: inline;
+  }
+
+  .esquema[data-estado] .marcador > * {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: viaje 1600ms linear 1000ms both;
+  }
+
+  .esquema[data-estado] .paso {
+    animation: paso-activo 400ms var(--ease-salida) var(--d, 0ms) both;
+  }
+
+  .esquema[data-estado] .paso-barra {
+    animation: llenar var(--dur, 600ms) var(--ease, var(--ease-salida)) var(--d, 0ms) both;
+  }
+
+  /* ---- Acompañamiento ligado al desplazamiento (sin JavaScript) ---- */
+
+  @supports (animation-timeline: view()) {
+    /* La foto del héroe se queda atrás al salir: profundidad sin deformar. */
+    .hero-foto img {
+      animation:
+        acercar 1700ms var(--ease-expo) 260ms both,
+        deriva linear both;
+      animation-timeline: auto, view();
+      animation-range: normal, cover 50% cover 100%;
     }
 
-    .lamina {
-      view-timeline: --lamina block;
+    /* Abejas y avispas se descubren desde lados opuestos y se encuentran al centro. */
+    .velo {
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: var(--color-paper);
+      transform-origin: right;
+      animation: descubrir cubic-bezier(0.3, 0, 0.2, 1) both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 35%;
     }
 
-    .lamina .trazo {
-      stroke-dasharray: 1;
-      animation: trazar linear both;
-      animation-timeline: --lamina;
-      animation-range: entry 10% cover 40%;
+    .barrido-derecha .velo {
+      transform-origin: left;
+    }
+
+    .barrido img {
+      animation: asentar linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 50%;
+    }
+
+    .foto-deriva img {
+      animation: deriva-contacto linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
     }
   }
 }
