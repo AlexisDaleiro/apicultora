@@ -1,5 +1,6 @@
 import { BarraContacto } from "@/components/BarraContacto";
 import { PreparadorMensaje } from "@/components/Consulta";
+import { FotoEditorial } from "@/components/FotoEditorial";
 import {
   IconoCorreo,
   IconoFlecha,
@@ -8,6 +9,7 @@ import {
   LaminaApiario,
   LaminaColonia,
   LaminaTraslado,
+  MapaDestino,
 } from "@/components/graficos";
 import { sitio, telLink, whatsappLink } from "@/content/sitio";
 
@@ -94,7 +96,7 @@ export default function Inicio() {
           <span className="font-normal [font-stretch:78%]">del Río</span>
         </a>
         <nav aria-label="Principal" className="col-span-2 row-start-2 mt-3 border-t border-rule lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:mt-0 lg:border-0">
-          <ul className="-mx-2.5 flex flex-wrap sm:-mx-3 lg:justify-end lg:gap-2">
+          <ul className="-mx-2.5 flex flex-wrap max-[359px]:text-base sm:-mx-3 lg:justify-end lg:gap-2">
             {NAVEGACION.map((item) => (
               <li key={item.href}>
                 <a
@@ -117,17 +119,7 @@ export default function Inicio() {
       <main id="contenido" tabIndex={-1} className="outline-none">
         {/* Primera pantalla */}
         <section id="inicio" aria-labelledby="titulo-principal" className="contenedor">
-          <div className="mt-2 flex justify-between gap-6 border-y border-ink py-2.5 text-meta lg:mt-0">
-            <p>Colmenas del Río · Uruguay</p>
-            <p className="text-right text-muted">
-              <span className="sm:hidden">Abejas y avispas</span>
-              <span className="hidden sm:inline">
-                Abejas (<i className="nombre-cientifico">Apis mellifera</i>) y avispas
-              </span>
-            </p>
-          </div>
-
-          <div className="mt-8 md:mt-12 md:grid md:grid-cols-12 md:gap-x-6 lg:mt-14">
+          <div className="mt-6 border-t border-ink pt-6 md:grid md:grid-cols-12 md:gap-x-6 md:pt-8 lg:mt-0">
             <h1
               id="titulo-principal"
               className="text-display font-[760] [font-stretch:80%] md:col-span-12 lg:col-span-8 lg:row-start-1"
@@ -140,7 +132,7 @@ export default function Inicio() {
               className="mt-8 md:col-span-12 md:row-start-2 md:mt-8 md:grid md:grid-cols-2 md:gap-x-8 lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:mt-3 lg:block"
             >
               <p className="max-w-[34ch] text-lead">
-                Nos especializamos en situaciones con abejas y avispas. Contanos qué encontraste y consultanos por tu caso.
+                Retiramos colmenas de abejas y nidos de avispas. Contanos dónde están y consultanos por tu caso.
               </p>
               <AccionesContacto claseExtra="mt-7 md:col-start-2 md:row-span-2 md:row-start-1 md:mt-0 md:flex-col lg:mt-7" />
               <p className="mt-5 flex max-w-[34ch] gap-3 text-meta text-muted">
@@ -149,7 +141,7 @@ export default function Inicio() {
               </p>
             </div>
 
-            <figure className="-mx-5 mt-12 sm:mx-0 md:col-span-12 md:row-start-3 lg:row-start-2 lg:mt-16">
+            <figure className="-mx-5 mt-8 sm:mx-0 md:col-span-12 md:row-start-3 lg:row-start-2">
               <picture>
                 <source
                   media="(max-width: 39.999rem)"
@@ -187,12 +179,11 @@ export default function Inicio() {
                   className="aspect-[900/855] h-auto w-full bg-paper-press object-cover sm:aspect-[1870/841]"
                 />
               </picture>
-              <figcaption className="mt-3 flex gap-3 px-5 text-meta text-muted sm:px-0">
-                <span aria-hidden="true" className="mt-[0.6em] h-px w-6 shrink-0 bg-ink" />
+              <figcaption className="epigrafe mt-3 px-5 sm:px-0">
                 <span>
-                  Retiro de panales en una abertura de pared.{" "}
+                  Retiro de panales en una pared.{" "}
                   <span className="sm:hidden">Foto: Colmenas del Río.</span>
-                  <span className="hidden sm:inline">Encuadre ampliado con IA a partir de una foto de Colmenas del Río.</span>
+                  <span className="hidden sm:inline">Imagen ampliada con IA.</span>
                 </span>
               </figcaption>
             </figure>
@@ -200,63 +191,76 @@ export default function Inicio() {
         </section>
 
         {/* Servicio */}
-        <section id="servicio" aria-labelledby="titulo-servicio" className="contenedor mt-24 md:mt-36">
-          <div className="grid gap-x-6 border-t-2 border-ink pt-6 md:grid-cols-12">
+        <section id="servicio" aria-labelledby="titulo-servicio" className="contenedor mt-12 md:mt-16">
+          <div className="grid gap-x-6 border-t border-ink pt-6 md:grid-cols-12">
             <h2 id="titulo-servicio" className="text-h2 font-[760] [font-stretch:80%] md:col-span-6">
               ¿Qué encontraste?
             </h2>
             <p className="mt-4 max-w-[38ch] text-lead md:col-span-5 md:col-start-8 md:mt-1">
-              Especialistas en el retiro de colmenas de abejas y la resolución de situaciones con avispas.
+              Si no sabés si son abejas o avispas, consultanos igual.
             </p>
           </div>
 
-          <div className="mt-12 grid border-t border-rule md:mt-16 md:grid-cols-12">
-            <div className="py-8 md:col-span-7 md:border-r md:border-rule md:py-10 md:pr-12">
-              <h3 className="text-h3 font-bold [font-stretch:80%]">Abejas</h3>
-              <p className="nombre-cientifico mt-1 text-[1.0625rem] text-muted">Apis mellifera</p>
-              <p className="mt-5 max-w-[52ch]">
-                Retiro de colmenas y reubicación de colonias rústicas cuando corresponde. Las colonias de abejas que se
-                reubican se trasladan a apiarios trazabilizados en predios del sur de Uruguay.
+          <div className="mt-6 grid gap-8 md:mt-8 md:grid-cols-2 md:gap-10">
+            <article className="border-t border-ink pt-4">
+              <div className="space-y-1">
+                <h3 className="text-h3 font-bold [font-stretch:80%]">Abejas</h3>
+              </div>
+              <figure className="mt-5">
+                <FotoEditorial nombre="abeja" alt="Referencia ilustrativa de una abeja melífera de perfil: tórax velloso y abdomen de tonos ámbar y marrón." />
+                <figcaption className="mt-3 flex flex-wrap justify-between gap-x-4 gap-y-1 text-meta text-muted">
+                  <span>Tórax velloso</span>
+                  <span>Tonos ámbar y marrón</span>
+                </figcaption>
+              </figure>
+              <p className="mt-6 max-w-[52ch]">
+                Retiramos colmenas y reubicamos las colonias cuando el caso lo permite.
               </p>
               <a href="#reubicacion" className="enlace mt-5 inline-flex min-h-11 items-center gap-2 font-semibold">
                 Ver la reubicación
                 <IconoFlecha direccion="abajo" />
               </a>
-            </div>
-            <div className="border-t border-rule py-8 md:col-span-5 md:border-t-0 md:py-10 md:pl-12">
-              <h3 className="text-h3 font-bold [font-stretch:80%]">Avispas</h3>
-              <p className="mt-5 max-w-[44ch] md:mt-[3.25rem]">
-                Atendemos situaciones con nidos de avispas. Consultanos para evaluar el caso y definir cómo intervenir.
+            </article>
+            <article className="border-t border-ink pt-4">
+              <div className="space-y-1">
+                <h3 className="text-h3 font-bold [font-stretch:80%]">Avispas</h3>
+              </div>
+              <figure className="mt-5">
+                <FotoEditorial nombre="avispa" alt="Referencia ilustrativa de una avispa amarilla y negra de perfil: cuerpo más liso y cintura estrecha." />
+                <figcaption className="mt-3 flex flex-wrap justify-between gap-x-4 gap-y-1 text-meta text-muted">
+                  <span>Cuerpo más liso</span>
+                  <span>Cintura marcada</span>
+                </figcaption>
+              </figure>
+              <p className="mt-6 max-w-[44ch]">
+                Evaluamos la ubicación del nido para definir cómo intervenir.
               </p>
-            </div>
+              <a href="#contacto" className="enlace mt-5 inline-flex min-h-11 items-center gap-2 font-semibold">
+                Consultar por un nido
+                <IconoFlecha />
+              </a>
+            </article>
           </div>
 
-          <div className="flex flex-col gap-5 border-y-2 border-ink py-7 md:flex-row md:items-center md:justify-between md:py-8">
-            <p className="text-[1.5rem] leading-tight font-bold [font-stretch:85%] md:text-[1.875rem]">
-              ¿No sabés qué insecto es? <span className="font-normal text-muted">Podés consultar igual.</span>
-            </p>
-            <a href="#contacto" className="boton boton-secundario shrink-0 self-start md:self-auto">
-              Contanos qué encontraste
-              <IconoFlecha />
-            </a>
-          </div>
+          <p className="epigrafe mt-5">
+            Imágenes ilustrativas generadas con IA. El aspecto varía según la especie.
+          </p>
         </section>
 
         {/* Reubicación */}
-        <section id="reubicacion" aria-labelledby="titulo-reubicacion" className="sobre-oliva mt-24 bg-olive py-20 text-paper md:mt-36 md:py-28">
+        <section id="reubicacion" aria-labelledby="titulo-reubicacion" className="sobre-oliva mt-12 bg-olive py-10 text-paper md:mt-16 md:py-14">
           <div className="contenedor">
             <div className="grid gap-x-6 md:grid-cols-12">
               <h2 id="titulo-reubicacion" className="text-h2 font-[760] [font-stretch:80%] md:col-span-6">
-                La reubicación continúa en un apiario.
+                Reubicación de abejas
               </h2>
               <p className="mt-6 max-w-[34ch] font-serif text-[clamp(1.25rem,1rem+0.9vw,1.75rem)] leading-[1.35] md:col-span-5 md:col-start-8 md:mt-1">
-                Las colonias rústicas de abejas que se reubican se trasladan a apiarios trazabilizados, en distintos predios
-                del sur de Uruguay.
+                Cuando el caso permite reubicarlas, las colonias se trasladan a apiarios trazabilizados del sur de Uruguay.
               </p>
             </div>
 
-            <figure className="mt-14 md:mt-20">
-              <ol className="grid gap-y-12 md:grid-cols-3 md:gap-x-0">
+            <figure className="mt-8">
+              <ol className="grid gap-y-6 md:grid-cols-3 md:gap-x-0">
                 {PASOS.map(({ titulo, texto, Lamina }, indice) => (
                   <li key={titulo} className="border-t border-olive-rule pt-5 md:pr-8 lg:pr-12">
                     <div className="md:-mr-8 lg:-mr-12"><Lamina /></div>
@@ -270,24 +274,34 @@ export default function Inicio() {
                   </li>
                 ))}
               </ol>
-              <figcaption className="mt-12 border-t border-olive-rule pt-4 font-serif text-meta text-olive-text">
-                Esquema de reubicación de colonias de abejas. Ilustración conceptual.
+              <figcaption className="mt-6 flex flex-col items-start gap-x-8 border-t border-olive-rule pt-3 text-meta text-olive-text sm:flex-row sm:items-center sm:justify-between">
+                <p className="max-w-[42ch]">El mapa muestra el destino de las colonias reubicadas. Consultanos por tu localidad para conocer la zona de atención.</p>
+                <div className="w-52 shrink-0"><MapaDestino /></div>
               </figcaption>
             </figure>
           </div>
         </section>
 
         {/* Consulta */}
-        <section id="contacto" aria-labelledby="titulo-contacto" className="contenedor mt-24 md:mt-36">
-          <div className="grid gap-x-6 gap-y-16 lg:grid-cols-12">
+        <section id="contacto" aria-labelledby="titulo-contacto" className="contenedor mt-12 md:mt-16">
+          <div className="grid gap-x-6 gap-y-8 border-t border-ink pt-6 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <h2 id="titulo-contacto" className="text-h2 font-[760] [font-stretch:80%]">
-                Contanos qué encontraste.
+                Contacto
               </h2>
-              <p className="mt-5 max-w-[36ch] text-lead">Escribinos por WhatsApp o llamanos. Consultanos también por tu localidad.</p>
-              <AccionesContacto claseExtra="mt-8 lg:max-w-sm lg:flex-col" />
+              <p className="mt-4 max-w-[36ch] text-lead">Contanos qué encontraste y en qué localidad estás.</p>
+              <AccionesContacto claseExtra="mt-5 lg:max-w-sm lg:flex-col" />
 
-              <dl className="mt-10 border-t border-ink">
+              <figure className="mt-6 max-w-sm">
+                <FotoEditorial
+                  nombre="equipo"
+                  alt="Escena generada con dos apicultores junto a una colmena cerrada."
+                  sizes="(min-width: 40rem) 384px, calc(100vw - 2.5rem)"
+                />
+                <figcaption className="epigrafe mt-2">Escena generada para esta propuesta.</figcaption>
+              </figure>
+
+              <dl className="mt-5 border-t border-ink">
                 <div className="flex flex-wrap items-center justify-between gap-x-6 border-b border-rule py-2">
                   <dt className="text-muted">Teléfono y WhatsApp</dt>
                   <dd>
@@ -322,7 +336,7 @@ export default function Inicio() {
                   </dd>
                 </div>
               </dl>
-              <p className="mt-6 max-w-[42ch] text-meta text-muted">Si ya tenés una imagen, podés compartirla al conversar con el equipo.</p>
+              <p className="mt-4 max-w-[42ch] text-meta text-muted">Podés enviarnos una foto por WhatsApp.</p>
             </div>
 
             <div className="requiere-js lg:col-span-6 lg:col-start-7">
@@ -332,8 +346,8 @@ export default function Inicio() {
         </section>
 
         {/* Preguntas frecuentes */}
-        <section id="preguntas" aria-labelledby="titulo-preguntas" className="contenedor mt-24 md:mt-36">
-          <div className="grid gap-x-6 border-t-2 border-ink pt-6 lg:grid-cols-12">
+        <section id="preguntas" aria-labelledby="titulo-preguntas" className="contenedor my-12 md:my-16">
+          <div className="grid gap-x-6 border-t border-ink pt-6 lg:grid-cols-12">
             <h2 id="titulo-preguntas" className="text-h2 font-[760] [font-stretch:80%] lg:col-span-4">
               Preguntas frecuentes
             </h2>
@@ -356,19 +370,10 @@ export default function Inicio() {
           </div>
         </section>
 
-        {/* Cierre */}
-        <section id="cierre" aria-labelledby="titulo-cierre" className="contenedor mt-24 mb-24 md:mt-36 md:mb-32">
-          <div className="grid items-end gap-x-6 gap-y-8 border-t-2 border-ink pt-10 md:grid-cols-12">
-            <h2 id="titulo-cierre" className="text-h2 font-[760] [font-stretch:80%] md:col-span-7">
-              ¿Tenés una situación para consultar?
-            </h2>
-            <AccionesContacto claseExtra="md:col-span-4 md:col-start-9 md:flex-col" />
-          </div>
-        </section>
       </main>
 
       <footer className="sobre-tinta bg-ink text-paper">
-        <div className="contenedor grid gap-x-6 gap-y-10 py-14 md:grid-cols-12 md:py-16">
+        <div className="contenedor grid gap-x-6 gap-y-6 py-8 md:grid-cols-12 md:py-10">
           <div className="md:col-span-5">
             <p className="text-[1.5rem] leading-none tracking-[-0.01em]">
               <span className="font-extrabold [font-stretch:78%]">Colmenas</span> <span className="[font-stretch:78%]">del Río</span>

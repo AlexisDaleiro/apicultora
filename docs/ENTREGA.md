@@ -14,7 +14,15 @@ Registro de lo que usa la demo y de lo que el cliente debe confirmar antes de pu
 | Ícono de WhatsApp | Trazado de Simple Icons (CC0) | Marca de terceros, solo para reconocer el canal | Oculto; el enlace tiene texto | Ninguno |
 | Fuentes Archivo y Source Serif 4 | Google Fonts vía `next/font`, servidas desde el sitio | Tipografías | No aplica | Ninguno (SIL OFL 1.1) |
 
-El hero panorámico incluye una ampliación generada con IA solicitada por el usuario. En móvil se conserva la fotografía original. No se usaron imágenes de bancos de fotos.
+El hero panorámico incluye una ampliación generada con IA solicitada por el usuario. En móvil se conserva la fotografía original. Las fotos de referencia de abeja, avispa y oficio también fueron generadas por pedido del usuario el 2026-11-04; ver `docs/cuaderno-de-campo.md`. No se usaron imágenes de bancos de fotos.
+
+### Ampliación visual para la demo
+
+| Archivo | Origen y uso |
+| --- | --- |
+| `public/img/{abeja,avispa}-{480,800,1200}.{avif,webp}` | Dos macros generadas con `image_gen`, rotuladas como referencias ilustrativas. No representan ejemplares documentados ni una guía exhaustiva de identificación. Originales en `docs/referencias/fuente/` y prompts en `docs/cuaderno-de-campo.md`. |
+| `public/img/equipo-{480,800,1200}.{avif,webp}` | Escena generada con dos personas ficticias para presentar el oficio. No muestra al equipo real de la empresa; así se identifica en el texto alternativo y el epígrafe. Se podrá reemplazar por material real del cliente. |
+| `MapaDestino` en `src/components/graficos.tsx` | Contorno vectorial de Uruguay derivado de Natural Earth (dominio público, 1:110m). El sombreado representa el sur del país como destino general; no muestra ubicaciones concretas ni cobertura comercial. |
 
 ## Datos comerciales a confirmar
 

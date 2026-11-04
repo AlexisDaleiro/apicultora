@@ -140,3 +140,27 @@ export function LaminaApiario() {
     </svg>
   );
 }
+
+/** Contorno Natural Earth 1:110m, dominio público. El sombreado representa el sur, no una cobertura de atención. */
+export function MapaDestino() {
+  const contorno = "M48.6 21.7 L67.7 18.0 L97.2 45.1 L108.2 44.1 L138.5 66.6 L161.6 86.0 L178.6 109.9 L165.6 126.5 L173.8 146.4 L161.0 168.5 L127.8 188.0 L106.0 181.0 L90.1 184.7 L62.9 169.7 L42.9 170.8 L25.0 151.4 L27.3 128.7 L33.7 120.9 L33.4 85.9 L41.3 49.8 L48.6 21.7 Z";
+
+  return (
+    <svg aria-hidden="true" focusable="false" viewBox="0 0 320 210" className="h-auto w-full" fill="none">
+      <defs>
+        <clipPath id="mapa-sur-uruguay"><path d={contorno} /></clipPath>
+      </defs>
+      <path d={contorno} fill="var(--color-olive-deep)" />
+      <g clipPath="url(#mapa-sur-uruguay)">
+        <rect x="20" y="148" width="165" height="50" fill="var(--color-paper)" fillOpacity="0.18" />
+        <path d="M20 149h165" stroke="var(--color-olive-text)" strokeDasharray="2 5" />
+      </g>
+      <path d={contorno} stroke="var(--color-olive-text)" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M115 166h87l13-13" stroke="var(--color-paper)" strokeWidth="1" />
+      <text x="212" y="140" fill="var(--color-paper)" fontSize="13" fontFamily="var(--font-sans)">Sur del país</text>
+      <text x="212" y="159" fill="var(--color-olive-text)" fontSize="11" fontFamily="var(--font-sans)">Apiarios de destino</text>
+      <path d="M222 39V21m-4 5 4-5 4 5" stroke="var(--color-olive-text)" strokeWidth="1" />
+      <text x="218" y="53" fill="var(--color-olive-text)" fontSize="10" fontFamily="var(--font-sans)">N</text>
+    </svg>
+  );
+}

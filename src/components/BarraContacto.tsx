@@ -5,7 +5,7 @@ import { sitio, telLink, whatsappLink } from "@/content/sitio";
 import { IconoTelefono, IconoWhatsApp } from "./graficos";
 
 // Mientras alguno de estos bloques con contacto propio está en pantalla, la barra se oculta.
-const BLOQUES_CON_CONTACTO = ["#hero-acciones", "#contacto", "#cierre", "footer"];
+const BLOQUES_CON_CONTACTO = ["#hero-acciones", "#contacto", "footer"];
 
 /**
  * Barra fija solo en móvil. Arranca oculta: sin JavaScript no aparece

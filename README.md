@@ -7,6 +7,7 @@ Landing de una sola página para presentar una propuesta de rediseño a Colmenas
 - Medios y datos pendientes de confirmar: [docs/ENTREGA.md](docs/ENTREGA.md)
 - Pruebas ejecutadas y resultados: [VERIFICATION.md](VERIFICATION.md)
 - Capturas finales: [docs/capturas/](docs/capturas/)
+- Ampliación creativa, imágenes generadas y prompts: [docs/cuaderno-de-campo.md](docs/cuaderno-de-campo.md)
 
 ## Requisitos
 
@@ -54,6 +55,7 @@ npm run typecheck && npm run lint && npm test
 | Lógica del mensaje de WhatsApp | `src/lib/mensaje.ts` (+ tests) |
 | Colores, tipografía, botones, campos, movimiento | `src/app/globals.css` (tokens en `@theme`) |
 | Íconos y láminas del esquema de reubicación | `src/components/graficos.tsx` |
+| Fotos de comparación y del oficio | `src/components/FotoEditorial.tsx`, `public/img/{abeja,avispa,equipo}-{480,800,1200}.{avif,webp}` |
 | Fotografía | Hero panorámico: `public/img/apicultor-panoramico-{640,960,1200,1600,1870}.{avif,webp}`. Móvil: `public/img/apicultor-{480,600,760,900}.{avif,webp}`. Origen y prompt: `docs/hero-panoramico.md` |
 | Imagen para redes y favicon | `public/og.jpg`, `src/app/icon.png`, `src/app/apple-icon.png` |
 

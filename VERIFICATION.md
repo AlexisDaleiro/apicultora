@@ -1,5 +1,9 @@
 # Verificación
 
+Limpieza posterior (2026-11-04): eliminados rótulos de sección y de figuras, frases genéricas, folio de cabecera y cierre redundante. Foto de apicultores integrada al contacto; separaciones de 48/64 px y banda oliva más compacta. Build y tipos aprobados con la alternativa temporal ya documentada (configuración restaurada); lint aprobado. Navegador en 320, 375, 768 y 1440 px: sin desborde ni rótulos restantes, enlace a contacto correcto, consola sin errores. Capturas `limpieza-servicio-1440.jpg` y `limpieza-contacto-1440.jpg`. Las capturas `cuaderno-*` describen la versión anterior.
+
+Ampliación creativa (2026-11-04): comparación fotográfica, mapa de destino, folios editoriales y bloque del oficio. Ver [docs/cuaderno-de-campo.md](docs/cuaderno-de-campo.md) para medios generados, fuentes, prompts y verificación en seis tamaños. Capturas nuevas con prefijo `cuaderno-` en `docs/capturas/`.
+
 Actualización del hero (2026-11-04): imagen panorámica generada y foto a ancho completo. Pruebas, capturas y limitación local del build en [docs/hero-panoramico.md](docs/hero-panoramico.md). Las auditorías de rendimiento y las capturas descritas más abajo corresponden a la versión anterior del hero.
 
 Fecha: 2026-11-03/04 (hora de Uruguay). Las pruebas de navegador corrieron sobre el **build de producción** (`npm run build`, exportación estática) servido en local con `serve@14.2.4` en `http://localhost:4173`. Estados: **aprobado**, **falló** (con corrección o desviación documentada) o **no ejecutado**.

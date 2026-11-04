@@ -147,6 +147,12 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  .epigrafe {
+    font-size: var(--text-meta);
+    line-height: var(--text-meta--line-height);
+    color: var(--color-muted);
+  }
+
   .boton:active {
     transform: translateY(1px);
   }

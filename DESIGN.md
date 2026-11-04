@@ -71,8 +71,8 @@ spacing:
   gutter-tablet: "2rem"
   gutter-desktop: "2.5rem"
   column-gap: "1.5rem"
-  section: "6rem"
-  section-md: "9rem"
+  section: "3rem"
+  section-md: "4rem"
   touch: "2.75rem"
 components:
   button-primary:
@@ -114,11 +114,13 @@ components:
 
 # Design System: Colmenas del Río
 
+Preferencia vigente del usuario (2026-11-04): diseño más directo y compacto. Sin rótulos numerados de sección, índices «Fig.», folio «Cuaderno de campo» ni frases genéricas sobre escuchar o dar una mirada propia. La foto de apicultores se integra al contacto. No hay sección independiente del oficio ni llamada final repetida. Separaciones de 48 px en móvil y 64 px desde tablet; banda de reubicación con 40/56 px de relleno vertical. Se conservan los números de los tres pasos porque indican una secuencia.
+
 ## Overview
 
 **Creative North Star: "La publicación de campo"**
 
-Un oficio especialista presentado como una publicación documental: la tipografía arma la página, la única fotografía real se trata como un documento y la reubicación de las abejas se explica con una sola lámina dibujada. Papel claro, tinta casi negra, un oliva profundo para la acción principal y la doble página de reubicación, y un óxido que solo marca (punto final del titular, subrayados al pasar, foco). Nada de sombras, nada de tarjetas ilustradas, nada de texturas de panal.
+Un oficio especialista presentado como una publicación de campo: la tipografía arma la página, las fotografías tienen encuadres rectangulares y epígrafes, y la reubicación de las abejas se explica con una lámina dibujada que termina en un mapa. Papel claro, tinta casi negra, un oliva profundo para la acción principal y la doble página de reubicación, y un óxido que solo marca (punto final del titular, subrayados al pasar, foco). Nada de sombras, nada de tarjetas ilustradas, nada de texturas de panal.
 
 Objetivos de experiencia, en orden: quien encontró una colonia o un nido, con el teléfono en una mano y sin saber qué insecto es, tiene que poder escribir por WhatsApp o llamar sin leer ni bajar; después entender que no hace falta identificar el insecto; después ver la diferencia entre abejas y avispas; y por último saber adónde van las colonias reubicadas. Quien administra un predio o una empresa tiene que leer seriedad de especialista, no un folleto de control de plagas ni una tienda de miel.
 
@@ -128,7 +130,7 @@ Diferencias deliberadas respecto de la demo anterior (rechazada; captura en `doc
 - Papel, tinta y oliva; óxido solo como marca editorial y foco.
 - Archivo condensada y pesada para títulos; Source Serif 4 solo dentro de la sección de reubicación.
 - Líneas de tinta de 1 y 2 px como estructura; filetes finos como divisores.
-- Una fotografía de referencia, rectangular, con epígrafe y crédito; desde 640 px se usa su ampliación panorámica con IA solicitada por el usuario.
+- Fotografía rectangular con epígrafes numerados: hero, comparación de insectos y escena del oficio. Material generado identificado como parte de la propuesta.
 - Una lámina de tres paneles que comparten suelo y recorrido, y se dibuja al entrar en vista.
 - Esquinas de 4 px, sin sombras, plano.
 
@@ -221,7 +223,7 @@ Contenedor `.contenedor`: ancho máximo 80rem, centrado, márgenes laterales 1.2
 
 **Primera pantalla.** Móvil: h1, apoyo, acciones apiladas, nota y foto original a sangre (se come los márgenes del contenedor por debajo de sm), epígrafe debajo. Desde sm se usa la imagen panorámica. md: h1 en las 12 columnas; abajo, apoyo y nota a la izquierda y acciones a la derecha; luego, foto en las 12 columnas. lg: h1 en columnas 1–8 y acciones en 9–12 en la misma fila; debajo, la foto ocupa las 12 columnas (hasta 1200 px), con el epígrafe debajo.
 
-**Ritmo de secciones.** Cada sección se separa con `mt-24` (6rem) y `md:mt-36` (9rem); el cierre termina con 6rem / md 8rem. Las secciones sobre papel abren con una línea de tinta de 2 px y 1.5rem de aire (2.5rem en el cierre). Patrón de cabecera: h2 en columnas 1–6 y lead en 8–12. La sección de reubicación es una banda oliva a ancho completo con 5rem / md 7rem de relleno vertical.
+**Ritmo de secciones.** Separaciones de `mt-12` (3rem) y `md:mt-16` (4rem). Las secciones sobre papel abren con una línea de tinta de 1 px y 1.5rem de aire. Patrón de cabecera: h2 en columnas 1–6 y lead en 8–12. La sección de reubicación es una banda oliva a ancho completo con 2.5rem / md 3.5rem de relleno vertical.
 
 **Lámina.** Móvil: tres pasos apilados con 3rem entre sí. md: tres columnas sin separación; cada panel cancela con margen negativo el relleno derecho de su columna (2rem, lg 3rem) para que los tres dibujos se toquen y lean como una sola lámina.
 
@@ -244,7 +246,7 @@ Plano. No hay `box-shadow` en ningún lugar. La profundidad se arma con tono y l
 
 **Fotografía.** En móvil (<640 px), foto real original (900 × 855), con crédito «Foto: Colmenas del Río.», servida en AVIF y WebP (480, 600, 760, 900). Desde 640 px, ampliación panorámica con IA (1870 × 841) de esa misma foto, solicitada por el usuario el 2026-11-04, con epígrafe que aclara la ampliación. Versiones AVIF y WebP de 640, 960, 1200, 1600 y 1870 px. Ambas se muestran enteras, rectangulares, sin filtros ni texto superpuesto. Fuente y prompt en `docs/hero-panoramico.md`.
 
-**Ilustración.** Solo la lámina de reubicación: tres paneles SVG de 320 × 200 (colonia en un muro, caja de traslado, apiario de destino), trazo papel 1.75 sobre oliva, volúmenes rellenos en oliva hondo. Comparten suelo en y = 182 y recorrido punteado en y = 22 (`olive-text`, 1.5, `2 7`); en md+ se unen en una sola lámina. En móvil el recorrido (y la flecha final) se ocultan porque los paneles están apilados. El epígrafe dice «Ilustración conceptual».
+**Ilustración.** Lámina de reubicación: tres paneles SVG de 320 × 200 (colonia en un muro, caja de traslado, apiario de destino), trazo papel 1.75 sobre oliva, volúmenes rellenos en oliva hondo. Comparten suelo en y = 182 y recorrido punteado en y = 22 (`olive-text`, 1.5, `2 7`); en md+ se unen en una sola lámina. En móvil el recorrido (y la flecha final) se ocultan porque los paneles están apilados. El cierre añade un contorno discreto de Uruguay con el sur sombreado como región de destino. El epígrafe aclara el carácter conceptual y distingue destino de zona de atención.
 
 ## Components
 
@@ -319,7 +321,7 @@ Tres pasos numerados en serif sobre la banda oliva, cada uno con su panel, títu
 - **Don't** agregar sombras, degradados, texturas ni radios mayores a 4 px.
 - **Don't** usar Source Serif 4 fuera de la sección de reubicación ni itálica fuera de *Apis mellifera*.
 - **Don't** agregar rótulos sobre los títulos (kickers), íconos en tarjetas ni emojis.
-- **Don't** usar fotos de banco o de otro caso; ni recortar, filtrar o superponer texto a la foto real. La ampliación panorámica con IA del hero es una excepción pedida por el usuario y se identifica en el epígrafe.
+- **Don't** usar fotos de banco o de otro caso; ni recortar, filtrar o superponer texto a la foto real. La ampliación panorámica del hero y las fotos de comparación y oficio generadas con IA son excepciones pedidas por el usuario para esta demo y se identifican en los epígrafes.
 - **Don't** condensar el texto corrido ni bajar el cuerpo de 1.0625rem.
 
 ### Contenido
