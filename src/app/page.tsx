@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { BarraContacto } from "@/components/BarraContacto";
+import { CabeceraFija } from "@/components/CabeceraFija";
 import { PreparadorMensaje } from "@/components/Consulta";
 import { EsquemaReubicacion } from "@/components/EsquemaReubicacion";
 import { FotoEditorial } from "@/components/FotoEditorial";
@@ -77,7 +78,7 @@ export default function Inicio() {
         Saltar al contenido
       </a>
 
-      <div className="sobre-tinta bg-ink text-paper">
+      <CabeceraFija>
         <header className="contenedor entra flex flex-wrap items-center justify-between gap-x-6 pt-2 md:pt-3" style={retardo({ "--d": "0ms" })}>
           <a href="#inicio" className="inline-flex min-h-11 items-center text-[1.375rem] no-underline md:text-[1.5rem]">
             <Firma />
@@ -86,7 +87,7 @@ export default function Inicio() {
             <ul className="flex flex-wrap text-[0.9375rem] md:gap-1 md:text-base">
               {NAVEGACION.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="nav-enlace flex min-h-11 items-center px-2.5 font-medium text-ink-text no-underline hover:text-paper">
+                  <a href={item.href} className="nav-enlace flex min-h-11 items-center px-2.5 font-medium no-underline">
                     <span>{item.texto}</span>
                   </a>
                 </li>
@@ -94,7 +95,7 @@ export default function Inicio() {
             </ul>
           </nav>
         </header>
-      </div>
+      </CabeceraFija>
 
       <main id="contenido" tabIndex={-1} className="outline-none">
           <section id="inicio" aria-labelledby="titulo-principal" className="sobre-tinta bg-ink text-paper">

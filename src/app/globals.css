@@ -49,7 +49,14 @@
     background: var(--color-paper);
     color: var(--color-ink);
     -webkit-text-size-adjust: 100%;
-    scroll-padding-top: 1rem;
+    /* alto de la cabecera fija (dos líneas en móvil) + 1rem de aire */
+    scroll-padding-top: 7rem;
+  }
+
+  @media (min-width: 48rem) {
+    html {
+      scroll-padding-top: 4.5rem;
+    }
   }
 
   @media (max-width: 47.99rem) {
@@ -289,6 +296,53 @@
   .nav-enlace:focus-visible > span::after {
     transform: scaleX(1);
     transform-origin: left;
+  }
+
+  /* Cabecera fija siempre visible: sólida sobre el héroe, translúcida al bajar. */
+  .cabecera {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    transition:
+      background-color 240ms ease,
+      color 240ms ease;
+  }
+
+  .cabecera:not([data-arriba]) {
+    background: color-mix(in srgb, var(--color-ink) 80%, transparent);
+    -webkit-backdrop-filter: blur(14px) saturate(1.3);
+    backdrop-filter: blur(14px) saturate(1.3);
+  }
+
+  .cabecera .nav-enlace {
+    color: var(--color-ink-text);
+  }
+
+  .cabecera .nav-enlace:hover {
+    color: var(--color-paper);
+  }
+
+  .cabecera-clara {
+    color: var(--color-ink);
+  }
+
+  .cabecera-clara:not([data-arriba]) {
+    background: color-mix(in srgb, var(--color-paper) 85%, transparent);
+    box-shadow: 0 1px 0 rgb(32 39 35 / 0.08);
+  }
+
+  .cabecera-clara .nav-enlace {
+    color: var(--color-muted);
+  }
+
+  .cabecera-clara .nav-enlace:hover {
+    color: var(--color-ink);
+  }
+
+  .cabecera-clara .nav-enlace > span::after {
+    background: var(--color-oxide);
   }
 
   /* Enlace con flecha: la flecha avanza en su dirección. */
