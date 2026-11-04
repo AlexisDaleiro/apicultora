@@ -1,0 +1,459 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-04T03:02:25.083Z",
+  "title": "Design System: Colmenas del Río",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "#F2F0E8",
+        "tonalRamp": [
+          "oklch(15% 0.005 95.2)",
+          "oklch(25% 0.009 95.2)",
+          "oklch(35% 0.011 95.2)",
+          "oklch(45% 0.011 95.2)",
+          "oklch(55% 0.011 95.2)",
+          "oklch(65% 0.011 95.2)",
+          "oklch(80% 0.007 95.2)",
+          "oklch(95% 0.002 95.2)"
+        ]
+      },
+      "paper-raised": {
+        "role": "neutral",
+        "displayName": "Papel alzado",
+        "canonical": "#FBFAF5",
+        "tonalRamp": [
+          "oklch(15% 0.003 97.3)",
+          "oklch(25% 0.005 97.3)",
+          "oklch(35% 0.007 97.3)",
+          "oklch(45% 0.007 97.3)",
+          "oklch(55% 0.007 97.3)",
+          "oklch(65% 0.007 97.3)",
+          "oklch(80% 0.004 97.3)",
+          "oklch(95% 0.001 97.3)"
+        ]
+      },
+      "paper-press": {
+        "role": "neutral",
+        "displayName": "Papel prensado",
+        "canonical": "#E7E4D9",
+        "tonalRamp": [
+          "oklch(15% 0.007 94.2)",
+          "oklch(25% 0.012 94.2)",
+          "oklch(35% 0.015 94.2)",
+          "oklch(45% 0.015 94.2)",
+          "oklch(55% 0.015 94.2)",
+          "oklch(65% 0.015 94.2)",
+          "oklch(80% 0.010 94.2)",
+          "oklch(95% 0.002 94.2)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#202723",
+        "tonalRamp": [
+          "oklch(15% 0.006 160.4)",
+          "oklch(25% 0.010 160.4)",
+          "oklch(35% 0.012 160.4)",
+          "oklch(45% 0.012 160.4)",
+          "oklch(55% 0.012 160.4)",
+          "oklch(65% 0.012 160.4)",
+          "oklch(80% 0.008 160.4)",
+          "oklch(95% 0.002 160.4)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Gris apagado",
+        "canonical": "#60665B",
+        "tonalRamp": [
+          "oklch(15% 0.009 130.6)",
+          "oklch(25% 0.015 130.6)",
+          "oklch(35% 0.019 130.6)",
+          "oklch(45% 0.019 130.6)",
+          "oklch(55% 0.019 130.6)",
+          "oklch(65% 0.019 130.6)",
+          "oklch(80% 0.012 130.6)",
+          "oklch(95% 0.003 130.6)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Filete",
+        "canonical": "#D6D8CD",
+        "tonalRamp": [
+          "oklch(15% 0.007 115.1)",
+          "oklch(25% 0.012 115.1)",
+          "oklch(35% 0.015 115.1)",
+          "oklch(45% 0.015 115.1)",
+          "oklch(55% 0.015 115.1)",
+          "oklch(65% 0.015 115.1)",
+          "oklch(80% 0.010 115.1)",
+          "oklch(95% 0.002 115.1)"
+        ]
+      },
+      "control": {
+        "role": "neutral",
+        "displayName": "Borde de control",
+        "canonical": "#7C8273",
+        "tonalRamp": [
+          "oklch(15% 0.011 124.9)",
+          "oklch(25% 0.019 124.9)",
+          "oklch(35% 0.023 124.9)",
+          "oklch(45% 0.023 124.9)",
+          "oklch(55% 0.023 124.9)",
+          "oklch(65% 0.023 124.9)",
+          "oklch(80% 0.015 124.9)",
+          "oklch(95% 0.004 124.9)"
+        ]
+      },
+      "olive": {
+        "role": "primary",
+        "displayName": "Oliva de campo",
+        "canonical": "#3D4A36",
+        "tonalRamp": [
+          "oklch(15% 0.018 134.8)",
+          "oklch(25% 0.029 134.8)",
+          "oklch(35% 0.037 134.8)",
+          "oklch(45% 0.037 134.8)",
+          "oklch(55% 0.037 134.8)",
+          "oklch(65% 0.037 134.8)",
+          "oklch(80% 0.024 134.8)",
+          "oklch(95% 0.006 134.8)"
+        ]
+      },
+      "olive-deep": {
+        "role": "primary",
+        "displayName": "Oliva hondo",
+        "canonical": "#2F3A29",
+        "tonalRamp": [
+          "oklch(15% 0.016 134.7)",
+          "oklch(25% 0.026 134.7)",
+          "oklch(35% 0.033 134.7)",
+          "oklch(45% 0.033 134.7)",
+          "oklch(55% 0.033 134.7)",
+          "oklch(65% 0.033 134.7)",
+          "oklch(80% 0.021 134.7)",
+          "oklch(95% 0.005 134.7)"
+        ]
+      },
+      "olive-text": {
+        "role": "neutral",
+        "displayName": "Texto sobre oliva",
+        "canonical": "#C9CDB9",
+        "tonalRamp": [
+          "oklch(15% 0.013 116.2)",
+          "oklch(25% 0.022 116.2)",
+          "oklch(35% 0.028 116.2)",
+          "oklch(45% 0.028 116.2)",
+          "oklch(55% 0.028 116.2)",
+          "oklch(65% 0.028 116.2)",
+          "oklch(80% 0.018 116.2)",
+          "oklch(95% 0.004 116.2)"
+        ]
+      },
+      "olive-rule": {
+        "role": "neutral",
+        "displayName": "Filete sobre oliva",
+        "canonical": "#66735C",
+        "tonalRamp": [
+          "oklch(15% 0.018 131.7)",
+          "oklch(25% 0.031 131.7)",
+          "oklch(35% 0.038 131.7)",
+          "oklch(45% 0.038 131.7)",
+          "oklch(55% 0.038 131.7)",
+          "oklch(65% 0.038 131.7)",
+          "oklch(80% 0.024 131.7)",
+          "oklch(95% 0.006 131.7)"
+        ]
+      },
+      "oxide": {
+        "role": "secondary",
+        "displayName": "Óxido de sello",
+        "canonical": "#A1442F",
+        "tonalRamp": [
+          "oklch(15% 0.062 34.2)",
+          "oklch(25% 0.103 34.2)",
+          "oklch(35% 0.129 34.2)",
+          "oklch(45% 0.129 34.2)",
+          "oklch(55% 0.129 34.2)",
+          "oklch(65% 0.129 34.2)",
+          "oklch(80% 0.082 34.2)",
+          "oklch(95% 0.021 34.2)"
+        ]
+      },
+      "wax": {
+        "role": "secondary",
+        "displayName": "Cera",
+        "canonical": "#E8C9A0",
+        "tonalRamp": [
+          "oklch(15% 0.031 74.5)",
+          "oklch(25% 0.052 74.5)",
+          "oklch(35% 0.064 74.5)",
+          "oklch(45% 0.064 74.5)",
+          "oklch(55% 0.064 74.5)",
+          "oklch(65% 0.064 74.5)",
+          "oklch(80% 0.041 74.5)",
+          "oklch(95% 0.010 74.5)"
+        ]
+      },
+      "ink-text": {
+        "role": "neutral",
+        "displayName": "Texto sobre tinta",
+        "canonical": "#C3C7BB",
+        "tonalRamp": [
+          "oklch(15% 0.008 121.8)",
+          "oklch(25% 0.014 121.8)",
+          "oklch(35% 0.017 121.8)",
+          "oklch(45% 0.017 121.8)",
+          "oklch(55% 0.017 121.8)",
+          "oklch(65% 0.017 121.8)",
+          "oklch(80% 0.011 121.8)",
+          "oklch(95% 0.003 121.8)"
+        ]
+      },
+      "ink-rule": {
+        "role": "neutral",
+        "displayName": "Filete sobre tinta",
+        "canonical": "#3E4741",
+        "tonalRamp": [
+          "oklch(15% 0.007 156.4)",
+          "oklch(25% 0.012 156.4)",
+          "oklch(35% 0.015 156.4)",
+          "oklch(45% 0.015 156.4)",
+          "oklch(55% 0.015 156.4)",
+          "oklch(65% 0.015 156.4)",
+          "oklch(80% 0.010 156.4)",
+          "oklch(95% 0.002 156.4)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Solo el h1; Archivo 760 al 80% de ancho."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "h2 de sección; Archivo 760 al 80%."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "h3 Abejas / Avispas; Archivo 700 al 80%."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Texto de apoyo junto a cada h2, 34–38ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto corrido, 36–52ch."
+      },
+      "label": {
+        "displayName": "Meta",
+        "purpose": "Folio, epígrafes, ayudas, estado de copia."
+      },
+      "statement": {
+        "displayName": "Declaración serif",
+        "purpose": "Solo la declaración de reubicación; Source Serif 4 confinada a #reubicacion."
+      },
+      "species": {
+        "displayName": "Nombre científico",
+        "purpose": "Solo Apis mellifera; Archivo itálica 400 real, font-synthesis: none."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-salida",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Curva de todas las transiciones propias."
+      },
+      {
+        "name": "press",
+        "value": "120ms",
+        "purpose": "Botón :active translateY(1px)."
+      },
+      {
+        "name": "color",
+        "value": "160ms",
+        "purpose": "Fondos, bordes, colores y subrayados."
+      },
+      {
+        "name": "toggle",
+        "value": "200ms",
+        "purpose": "Signo de preguntas y barra de contacto móvil (translate + visibility)."
+      },
+      {
+        "name": "expand",
+        "value": "220ms",
+        "purpose": "Altura de respuestas vía interpolate-size y ::details-content."
+      },
+      {
+        "name": "trazar",
+        "value": "view-timeline --lamina; animation-range: entry 10% cover 40%",
+        "purpose": "Dibujo de .lamina .trazo; solo con @supports y prefers-reduced-motion: no-preference."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 2px solid var(--color-oxide); outline-offset: 3px; border-radius: 2px",
+        "purpose": "Foco por defecto; cera dentro de .sobre-oliva y .sobre-tinta; offset 1px en campos, 2px en fichas."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "40rem"
+      },
+      {
+        "name": "md",
+        "value": "48rem"
+      },
+      {
+        "name": "lg",
+        "value": "64rem"
+      },
+      {
+        "name": "contenedor-max",
+        "value": "80rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal por bloque: WhatsApp. Oliva con texto papel.",
+      "html": "<a class=\"ds-boton-primario\" href=\"#\"><svg aria-hidden=\"true\" width=\"1.25em\" height=\"1.25em\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z\"/></svg>Consultar por WhatsApp</a>",
+      "css": ".ds-boton-primario{display:inline-flex;align-items:center;justify-content:center;gap:0.625rem;min-height:3rem;padding:0.625rem 1.25rem;border-radius:4px;border:1.5px solid transparent;font-family:Archivo,ui-sans-serif,system-ui,sans-serif;font-weight:600;font-size:1.0625rem;line-height:1.2;text-decoration:none;cursor:pointer;transition:background-color 160ms cubic-bezier(0.22,1,0.36,1),border-color 160ms cubic-bezier(0.22,1,0.36,1),color 160ms cubic-bezier(0.22,1,0.36,1),transform 120ms cubic-bezier(0.22,1,0.36,1);background:var(--color-olive,#3D4A36);color:var(--color-paper,#F2F0E8);}.ds-boton-primario:hover{background:var(--color-olive-deep,#2F3A29);}.ds-boton-primario:active{transform:translateY(1px);}.ds-boton-primario:focus-visible{outline:2px solid var(--color-oxide,#A1442F);outline-offset:3px;}"
+    },
+    {
+      "name": "Botón secundario",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Llamar, copiar, ir a contacto. Borde y texto tinta.",
+      "html": "<a class=\"ds-boton-secundario\" href=\"#\"><svg aria-hidden=\"true\" width=\"1.25em\" height=\"1.25em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 16.4v2.9a1.9 1.9 0 0 1-2.1 1.9 18.8 18.8 0 0 1-8.2-2.9 18.5 18.5 0 0 1-5.7-5.7A18.8 18.8 0 0 1 2.1 4.4 1.9 1.9 0 0 1 4 2.3h2.9a1.9 1.9 0 0 1 1.9 1.6c.1.9.4 1.8.7 2.7a1.9 1.9 0 0 1-.4 2L7.8 9.8a15.2 15.2 0 0 0 5.7 5.7l1.2-1.2a1.9 1.9 0 0 1 2-.4c.9.3 1.8.6 2.7.7a1.9 1.9 0 0 1 1.6 1.8Z\"/></svg>Llamar al 099 498 294</a>",
+      "css": ".ds-boton-secundario{display:inline-flex;align-items:center;justify-content:center;gap:0.625rem;min-height:3rem;padding:0.625rem 1.25rem;border-radius:4px;border:1.5px solid transparent;font-family:Archivo,ui-sans-serif,system-ui,sans-serif;font-weight:600;font-size:1.0625rem;line-height:1.2;text-decoration:none;cursor:pointer;transition:background-color 160ms cubic-bezier(0.22,1,0.36,1),border-color 160ms cubic-bezier(0.22,1,0.36,1),color 160ms cubic-bezier(0.22,1,0.36,1),transform 120ms cubic-bezier(0.22,1,0.36,1);background:transparent;border-color:var(--color-ink,#202723);color:var(--color-ink,#202723);}.ds-boton-secundario:hover{background:var(--color-paper-press,#E7E4D9);}.ds-boton-secundario:active{transform:translateY(1px);}.ds-boton-secundario:focus-visible{outline:2px solid var(--color-oxide,#A1442F);outline-offset:3px;}"
+    },
+    {
+      "name": "Enlace",
+      "kind": "custom",
+      "refersTo": "enlace",
+      "description": "Subrayado de 1 px en el color del texto; hover óxido de 2 px.",
+      "html": "<a class=\"ds-enlace\" href=\"#\">leomenoni14@gmail.com</a>",
+      "css": ".ds-enlace{font-family:Archivo,ui-sans-serif,system-ui,sans-serif;color:var(--color-ink,#202723);text-decoration-line:underline;text-decoration-color:currentColor;text-decoration-thickness:1px;text-underline-offset:0.22em;transition:text-decoration-color 160ms cubic-bezier(0.22,1,0.36,1);}.ds-enlace:hover{text-decoration-color:var(--color-oxide,#A1442F);text-decoration-thickness:2px;}.ds-enlace:focus-visible{outline:2px solid var(--color-oxide,#A1442F);outline-offset:3px;border-radius:2px;}"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Papel alzado, borde control de 1.5 px; hover y foco a tinta con anillo óxido.",
+      "html": "<label class=\"ds-campo-etiqueta\">Localidad o zona<span>Alcanza con la localidad o el barrio.</span><input class=\"ds-campo\" type=\"text\"></label>",
+      "css": ".ds-campo-etiqueta{display:block;font-family:Archivo,ui-sans-serif,system-ui,sans-serif;font-weight:600;color:var(--color-ink,#202723);}.ds-campo-etiqueta span{display:block;font-weight:400;font-size:0.875rem;line-height:1.45;color:var(--color-muted,#60665B);}.ds-campo{display:block;width:100%;margin-top:0.5rem;min-height:3rem;padding:0.625rem 0.875rem;border:1.5px solid var(--color-control,#7C8273);border-radius:4px;background:var(--color-paper-raised,#FBFAF5);color:var(--color-ink,#202723);font:inherit;font-weight:400;caret-color:var(--color-oxide,#A1442F);transition:border-color 160ms cubic-bezier(0.22,1,0.36,1);}.ds-campo:hover{border-color:var(--color-ink,#202723);}.ds-campo:focus-visible{border-color:var(--color-ink,#202723);outline:2px solid var(--color-oxide,#A1442F);outline-offset:1px;}"
+    },
+    {
+      "name": "Fichas de opción",
+      "kind": "chip",
+      "refersTo": "option-tile",
+      "description": "Radios en fichas de 3 columnas; la elegida se llena de oliva.",
+      "html": "<div class=\"ds-opciones\"><label class=\"ds-opcion\"><input type=\"radio\" name=\"ds-esp\" checked>Abejas</label><label class=\"ds-opcion\"><input type=\"radio\" name=\"ds-esp\">Avispas</label><label class=\"ds-opcion\"><input type=\"radio\" name=\"ds-esp\">No sé</label></div>",
+      "css": ".ds-opciones{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;font-family:Archivo,ui-sans-serif,system-ui,sans-serif;}.ds-opcion{display:flex;align-items:center;gap:0.625rem;min-height:3rem;padding:0 0.75rem;border:1.5px solid var(--color-control,#7C8273);border-radius:4px;background:var(--color-paper-raised,#FBFAF5);color:var(--color-ink,#202723);font-weight:500;cursor:pointer;transition:border-color 160ms cubic-bezier(0.22,1,0.36,1),background-color 160ms cubic-bezier(0.22,1,0.36,1),color 160ms cubic-bezier(0.22,1,0.36,1);}.ds-opcion input{width:1.125rem;height:1.125rem;accent-color:var(--color-paper,#F2F0E8);margin:0;}.ds-opcion input:focus-visible{outline:none;}.ds-opcion:hover{border-color:var(--color-ink,#202723);}.ds-opcion:has(:checked){background:var(--color-olive,#3D4A36);border-color:var(--color-olive,#3D4A36);color:var(--color-paper,#F2F0E8);}.ds-opcion:has(:focus-visible){outline:2px solid var(--color-oxide,#A1442F);outline-offset:2px;}"
+    },
+    {
+      "name": "Navegación",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Enlaces 500 sin subrayado; hover subrayado óxido de 2 px.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Servicio</a><a href=\"#\">Reubicación</a><a href=\"#\">Contacto</a></nav>",
+      "css": ".ds-nav{display:flex;flex-wrap:wrap;gap:0.5rem;font-family:Archivo,ui-sans-serif,system-ui,sans-serif;}.ds-nav a{display:flex;align-items:center;min-height:2.75rem;padding:0 0.75rem;font-weight:500;color:var(--color-ink,#202723);text-decoration:none;text-decoration-color:var(--color-oxide,#A1442F);text-decoration-thickness:2px;text-underline-offset:0.4em;}.ds-nav a:hover{text-decoration-line:underline;}.ds-nav a:focus-visible{outline:2px solid var(--color-oxide,#A1442F);outline-offset:3px;border-radius:2px;}"
+    },
+    {
+      "name": "Pregunta frecuente",
+      "kind": "custom",
+      "refersTo": "pregunta",
+      "description": "details/summary con signo + que gira a − al abrir; filete inferior.",
+      "html": "<details class=\"ds-pregunta\"><summary><span class=\"ds-pregunta-texto\">¿Cuánto cuesta el servicio?</span><span class=\"ds-signo\" aria-hidden=\"true\"></span></summary><p>Depende de cada situación. Consultanos por tu caso.</p></details>",
+      "css": ".ds-pregunta{border-bottom:1px solid var(--color-rule,#D6D8CD);font-family:Archivo,ui-sans-serif,system-ui,sans-serif;color:var(--color-ink,#202723);}.ds-pregunta summary{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;min-height:3.5rem;padding:1.25rem 0;list-style:none;cursor:pointer;}.ds-pregunta summary::-webkit-details-marker{display:none;}.ds-pregunta-texto{font-size:1.1875rem;line-height:1.375;font-weight:600;text-decoration-thickness:2px;text-underline-offset:4px;}.ds-pregunta summary:hover .ds-pregunta-texto{text-decoration-line:underline;text-decoration-color:var(--color-oxide,#A1442F);}.ds-pregunta summary:focus-visible{outline:2px solid var(--color-oxide,#A1442F);outline-offset:3px;}.ds-signo{position:relative;flex-shrink:0;width:1.25rem;height:1.25rem;margin-top:0.25rem;}.ds-signo::before,.ds-signo::after{content:\"\";position:absolute;background:currentColor;}.ds-signo::before{left:0;right:0;top:50%;height:2px;transform:translateY(-50%);}.ds-signo::after{top:0;bottom:0;left:50%;width:2px;transform:translateX(-50%);transition:transform 200ms cubic-bezier(0.22,1,0.36,1);}.ds-pregunta[open] .ds-signo::after{transform:translateX(-50%) rotate(90deg);}.ds-pregunta p{margin:0;padding-bottom:1.5rem;max-width:60ch;color:var(--color-muted,#60665B);}"
+    },
+    {
+      "name": "Folio",
+      "kind": "custom",
+      "refersTo": "folio",
+      "description": "Franja meta entre dos líneas de tinta bajo el encabezado.",
+      "html": "<div class=\"ds-folio\"><p>Colmenas del Río · Uruguay</p><p>Abejas (<i>Apis mellifera</i>) y avispas</p></div>",
+      "css": ".ds-folio{display:flex;justify-content:space-between;gap:1.5rem;padding:0.625rem 0;border-top:1px solid var(--color-ink,#202723);border-bottom:1px solid var(--color-ink,#202723);font-family:Archivo,ui-sans-serif,system-ui,sans-serif;font-size:0.875rem;line-height:1.45;color:var(--color-ink,#202723);}.ds-folio p{margin:0;}.ds-folio p+p{text-align:right;color:var(--color-muted,#60665B);}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La publicación de campo",
+    "overview": "Un oficio especialista presentado como una publicación documental: la tipografía arma la página, la única fotografía real se trata como un documento y la reubicación de las abejas se explica con una sola lámina dibujada. Papel claro, tinta casi negra, un oliva profundo para la acción principal y la doble página de reubicación, y un óxido que solo marca (punto final del titular, subrayados al pasar, foco). Nada de sombras, nada de tarjetas ilustradas, nada de texturas de panal.\n\nObjetivos de experiencia, en orden: quien encontró una colonia o un nido, con el teléfono en una mano y sin saber qué insecto es, tiene que poder escribir por WhatsApp o llamar sin leer ni bajar; después entender que no hace falta identificar el insecto; después ver la diferencia entre abejas y avispas; y por último saber adónde van las colonias reubicadas. Quien administra un predio o una empresa tiene que leer seriedad de especialista, no un folleto de control de plagas ni una tienda de miel.\n\nDiferencias deliberadas respecto de la demo anterior (rechazada; captura en `docs/referencias/demo-anterior-1440.png`): el fondo verde petróleo pasa a papel `#F2F0E8`; los acentos amarillos desaparecen (el único amarillo de la página es el traje de la foto); no hay patrón de panal ni hexágonos; la foto ya no se recorta en hexágono, se muestra rectangular y entera; no hay abejitas ni apiarios ilustrados de adorno; los bloques de servicio ilustrados se reemplazan por dos columnas tipográficas separadas por una línea fina. La única ilustración es la lámina conceptual de reubicación, rotulada como tal.",
+    "keyCharacteristics": [
+      "Papel, tinta y oliva; óxido solo como marca editorial y foco.",
+      "Archivo condensada y pesada para títulos; Source Serif 4 solo dentro de la sección de reubicación.",
+      "Líneas de tinta de 1 y 2 px como estructura; filetes finos como divisores.",
+      "Una sola fotografía real, rectangular, con epígrafe y crédito.",
+      "Una lámina de tres paneles que comparten suelo y recorrido, y se dibuja al entrar en vista.",
+      "Esquinas de 4 px, sin sombras, plano."
+    ],
+    "rules": [
+      {
+        "name": "The Sello Rule",
+        "body": "El óxido marca, no rellena: nunca es fondo, nunca es texto corrido, nunca botón. Si una pantalla tiene más óxido que un punto, un guion y un subrayado, sobra.",
+        "section": "colors"
+      },
+      {
+        "name": "The Filete Rule",
+        "body": "El filete (`rule`, 1.26:1) nunca es el único límite de un control. Todo campo, opción o caja interactiva usa `control` o `ink`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Foco Oscuro Rule",
+        "body": "Toda superficie oscura nueva lleva `.sobre-oliva` o `.sobre-tinta` para que el foco pase a cera; el óxido no se ve sobre oliva.",
+        "section": "colors"
+      },
+      {
+        "name": "The Serif Confinada Rule",
+        "body": "Source Serif 4 vive solo dentro de `#reubicacion` (declaración, numerales, epígrafe de la lámina). Fuera de ahí, todo epígrafe y toda nota es Archivo.",
+        "section": "typography"
+      },
+      {
+        "name": "The Itálica Real Rule",
+        "body": "La única itálica es *Apis mellifera* con `.nombre-cientifico` (Archivo itálica real, `font-synthesis: none`). No se usa itálica para énfasis.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ancho Rule",
+        "body": "Condensación solo en títulos: 80% para h1–h3, 85% para títulos menores, 78% para la firma. El texto corrido va siempre a ancho normal.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sin Sombra Rule",
+        "body": "Ninguna superficie se levanta con sombra. Si algo necesita separarse, recibe una línea o un cambio de tono.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do usar solo los tokens de `@theme` en `globals.css`; un color nuevo entra primero ahí con su contraste medido en comentario.",
+      "Do abrir cada sección nueva sobre papel con una línea de tinta de 2 px y separarla con 6rem / md 9rem.",
+      "Do componer en la grilla de 12 columnas dentro de `.contenedor`, con h2 en 1–6 y lead en 8–12.",
+      "Do poner títulos en Archivo 760 al 80% (h1, h2) o 700 al 80–85% (h3 y menores), con `text-wrap: balance`.",
+      "Do marcar toda superficie oscura con `.sobre-oliva` o `.sobre-tinta` para que el foco sea cera.",
+      "Do mantener 44 px mínimos en todo lo tocable y WhatsApp + llamada visibles en cada bloque de cierre.",
+      "Do usar `--ease-salida` y las duraciones 120/160/200/220 ms; envolver toda animación nueva en `prefers-reduced-motion: no-preference` y dejar el estado final visible sin ella.",
+      "Do rotular toda ilustración como conceptual y mantener sus trazos en papel sobre oliva, con suelo y recorrido compartidos si se agregan paneles."
+    ],
+    "donts": [
+      "Don't volver a la demo anterior: nada de fondo verde petróleo, acentos amarillos, patrón de panal, hexágonos, foto recortada en forma, abejitas o apiarios ilustrados de adorno, ni bloques de servicio ilustrados.",
+      "Don't usar el óxido como fondo, texto corrido o botón, ni como foco sobre oliva (1.52:1).",
+      "Don't usar `rule` como único borde de un control.",
+      "Don't agregar sombras, degradados, texturas ni radios mayores a 4 px.",
+      "Don't usar Source Serif 4 fuera de la sección de reubicación ni itálica fuera de *Apis mellifera*.",
+      "Don't agregar rótulos sobre los títulos (kickers), íconos en tarjetas ni emojis.",
+      "Don't usar fotos de banco, generadas o de otro caso; ni recortar, filtrar o superponer texto a la foto real.",
+      "Don't condensar el texto corrido ni bajar el cuerpo de 1.0625rem."
+    ]
+  }
+}

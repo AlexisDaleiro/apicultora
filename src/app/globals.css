@@ -1,0 +1,296 @@
+@import "tailwindcss";
+
+/* Tokens: ver DESIGN.md. Contrastes medidos sobre --color-paper salvo indicación. */
+@theme {
+  --color-paper: #f2f0e8;
+  --color-paper-raised: #fbfaf5;
+  --color-paper-press: #e7e4d9;
+  --color-ink: #202723; /* 13.38:1 */
+  --color-muted: #60665b; /* 5.19:1 */
+  --color-rule: #d6d8cd; /* decorativo, 1.26:1: nunca como único borde de control */
+  --color-control: #7c8273; /* 3.47:1, borde de campos */
+  --color-olive: #3d4a36; /* 8.25:1 */
+  --color-olive-deep: #2f3a29;
+  --color-olive-text: #c9cdb9; /* 5.79:1 sobre oliva */
+  --color-olive-rule: #66735c;
+  --color-oxide: #a1442f; /* 5.44:1 */
+  --color-wax: #e8c9a0; /* 5.96:1 sobre oliva, 9.66:1 sobre tinta: anillo de foco en superficies oscuras */
+  --color-ink-text: #c3c7bb; /* 8.87:1 sobre tinta, texto secundario del pie */
+  --color-ink-rule: #3e4741;
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), ui-serif, Georgia, serif;
+
+  --text-display: clamp(2.625rem, 1.15rem + 6.3vw, 7rem);
+  --text-display--line-height: 0.93;
+  --text-display--letter-spacing: -0.025em;
+  --text-h2: clamp(1.875rem, 1.2rem + 2.9vw, 3.75rem);
+  --text-h2--line-height: 1;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h3: clamp(1.75rem, 1.35rem + 1.5vw, 2.5rem);
+  --text-h3--line-height: 1.05;
+  --text-h3--letter-spacing: -0.015em;
+  --text-lead: clamp(1.125rem, 1rem + 0.45vw, 1.375rem);
+  --text-lead--line-height: 1.45;
+  --text-body: clamp(1.0625rem, 1rem + 0.2vw, 1.1875rem);
+  --text-body--line-height: 1.6;
+  --text-meta: 0.875rem;
+  --text-meta--line-height: 1.45;
+
+  --ease-salida: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 1.5rem;
+  }
+
+  @media (max-width: 47.99rem) {
+    /* deja libre el espacio de la barra de contacto móvil al enfocar o saltar a un ancla */
+    html {
+      scroll-padding-bottom: 6rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    font-optical-sizing: auto;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+
+  ::selection {
+    background: var(--color-olive);
+    color: var(--color-paper);
+  }
+
+  input {
+    caret-color: var(--color-oxide);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-oxide);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .sobre-oliva :focus-visible,
+  .sobre-tinta :focus-visible {
+    outline-color: var(--color-wax);
+  }
+}
+
+@layer components {
+  .contenedor {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 40rem) {
+    .contenedor {
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .contenedor {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    min-height: 3rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 4px;
+    border: 1.5px solid transparent;
+    font-weight: 600;
+    font-size: 1.0625rem;
+    line-height: 1.2;
+    text-decoration: none;
+    transition:
+      background-color 160ms var(--ease-salida),
+      border-color 160ms var(--ease-salida),
+      color 160ms var(--ease-salida),
+      transform 120ms var(--ease-salida);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .boton:active {
+    transform: translateY(1px);
+  }
+
+  .boton-primario {
+    background: var(--color-olive);
+    color: var(--color-paper);
+  }
+
+  .boton-primario:hover {
+    background: var(--color-olive-deep);
+  }
+
+  .boton-secundario {
+    border-color: var(--color-ink);
+    color: var(--color-ink);
+  }
+
+  .boton-secundario:hover {
+    background: var(--color-paper-press);
+  }
+
+  /* Nombre científico: itálica real de Archivo (no sintética). */
+  .nombre-cientifico {
+    font-family: var(--font-archivo-italica), var(--font-sans);
+    font-style: italic;
+    font-synthesis: none;
+  }
+
+  .enlace {
+    text-decoration-line: underline;
+    text-decoration-color: currentColor;
+    transition: text-decoration-color 160ms var(--ease-salida), color 160ms var(--ease-salida);
+  }
+
+  .enlace:hover {
+    text-decoration-color: var(--color-oxide);
+    text-decoration-thickness: 2px;
+  }
+
+  .campo {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.625rem 0.875rem;
+    border: 1.5px solid var(--color-control);
+    border-radius: 4px;
+    background: var(--color-paper-raised);
+    color: var(--color-ink);
+    font: inherit;
+    transition: border-color 160ms var(--ease-salida);
+  }
+
+  .campo::placeholder {
+    color: var(--color-muted);
+  }
+
+  .campo:hover {
+    border-color: var(--color-ink);
+  }
+
+  .campo:focus-visible {
+    outline-offset: 1px;
+    border-color: var(--color-ink);
+  }
+}
+
+/* ---------- Preguntas frecuentes (details/summary nativo) ---------- */
+
+.pregunta summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.pregunta summary::-webkit-details-marker {
+  display: none;
+}
+
+.pregunta .signo::after {
+  transition: transform 200ms var(--ease-salida);
+}
+
+.pregunta[open] .signo::after {
+  transform: rotate(90deg);
+}
+
+.pregunta summary:hover .pregunta-texto {
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-oxide);
+}
+
+@supports (interpolate-size: allow-keywords) and selector(::details-content) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
+  .pregunta::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition:
+      block-size 220ms var(--ease-salida),
+      content-visibility 220ms allow-discrete;
+  }
+
+  .pregunta[open]::details-content {
+    block-size: auto;
+  }
+}
+
+/* ---------- Lámina de reubicación: el trazo se dibuja al entrar en vista ---------- */
+
+/* El recorrido une las tres láminas solo cuando están lado a lado. */
+@media (max-width: 47.99rem) {
+  .lamina .recorrido {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes trazar {
+      from {
+        stroke-dashoffset: 1;
+      }
+    }
+
+    .lamina {
+      view-timeline: --lamina block;
+    }
+
+    .lamina .trazo {
+      stroke-dasharray: 1;
+      animation: trazar linear both;
+      animation-timeline: --lamina;
+      animation-range: entry 10% cover 40%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after,
+  .pregunta::details-content {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
