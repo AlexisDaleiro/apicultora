@@ -309,6 +309,12 @@ export default function Inicio() {
           <div>
             <Firma clase="text-[1.5rem]" />
             <p className="mt-2 text-meta text-ink-text">Retiro de colmenas de abejas y nidos de avispas · Uruguay</p>
+            <p className="mt-1 text-meta text-ink-text">
+              Diseñado por{" "}
+              <a href="https://alexisdaleiroportfolio.vercel.app" target="_blank" rel="noopener noreferrer" className="enlace">
+                Alexis Daleiro
+              </a>
+            </p>
           </div>
           <ul className="flex flex-wrap gap-x-6">
             <li>
